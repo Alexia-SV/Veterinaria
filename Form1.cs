@@ -26,5 +26,17 @@ namespace VeterinariaS
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormVeterinaria obj = new FormVeterinaria();
+            obj.Show();
+            this.Hide();
+        }
     }
 }
