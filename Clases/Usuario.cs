@@ -7,7 +7,7 @@ using Veterinaria.Enums;
 
 namespace Veterinaria.Clases
 {
-    public class Usuarion
+    public class Usuario
     {
         //atributos 
         string Nombre { get; set; }
