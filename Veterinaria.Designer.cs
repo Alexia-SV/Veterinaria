@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Veterinaria";
             this.Text = "Veterinario";
+            this.Load += new System.EventHandler(this.Veterinaria_Load);
             this.ResumeLayout(false);
 
         }

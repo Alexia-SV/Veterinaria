@@ -34,7 +34,7 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormVeterinaria obj = new FormVeterinaria();
+            Veterinaria obj = new Veterinaria();
             obj.Show();
             this.Hide();
         }

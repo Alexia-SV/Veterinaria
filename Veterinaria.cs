@@ -16,5 +16,10 @@ namespace VeterinariaS
         {
             InitializeComponent();
         }
+
+        private void Veterinaria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
