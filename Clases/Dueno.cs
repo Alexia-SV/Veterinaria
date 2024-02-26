@@ -6,17 +6,17 @@ namespace Veterinaria.Clases
     public class Dueno
     {
         //atributos
-        string Nombre { get; set; }
-        string Direccion { get; set; }
-        string Telefono { get; set; }
+        string nombre { get; set; }
+        string direccion { get; set; }
+        string telefono { get; set; }
         //metodo constructor
         public Dueno() { }
         //metodo constructor parametros 
         public Dueno(string elNombre, string laDireccion, string elTelefono)
         {
-            Nombre = elNombre;
-            Direccion = laDireccion;
-            Telefono = elTelefono;
+            nombre = elNombre;
+            direccion = laDireccion;
+            telefono = elTelefono;
         }
     }
 }
