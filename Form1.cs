@@ -45,11 +45,14 @@ namespace VeterinariaS
                 //3. Mostrar el formulario
                 MessageBox.Show ("Inicio de sesion exitoso");
 
-                return; 
+                return;
             }
 
             //4. Si no existe, retornar un mensaje
             MessageBox.Show("Datos incorrectos");
+            textBox1.Text = " ";
+            textBox2.Text = " ";
+
         }
 
         private Usuario iniciarSesion(string Nombre, string Contrasena)
