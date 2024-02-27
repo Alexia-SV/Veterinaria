@@ -34,7 +34,12 @@ namespace VeterinariaS
         
         private void button1_Click(object sender, EventArgs e)
         {
-            //1. Buscar usuario y contraseña 
+            
+
+
+            //1.Si no existe ningun usuario en la lista de usuarios, se crea al administrador
+            //1. Buscar usuario dentro de la lista de usuarios
+            //2. Intentar iniciar sesion con contraseña
             string usuario = textBox1.Text;
             string contrasena = textBox2.Text;
             Usuario UsuarioQueInicioSesion = iniciarSesion(usuario, contrasena);
