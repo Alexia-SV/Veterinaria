@@ -10,15 +10,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Clases;
 using Veterinaria.Enums;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace VeterinariaS
 {
     public partial class Form1 : Form
     {
+        //Definicion de instanciaVeterinariaC
+        static VeterinariaC instanciaVeterinariaC;
         
         public Form1()
         {
             InitializeComponent();
+            //Llamar al metodo obtenerVeterinaria
+            instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,11 +42,6 @@ namespace VeterinariaS
         private void button1_Click(object sender, EventArgs e)
         {
             
-
-
-            //1.Si no existe ningun usuario en la lista de usuarios, se crea al administrador
-            //1. Buscar usuario dentro de la lista de usuarios
-            //2. Intentar iniciar sesion con contraseña
             string usuario = textBox1.Text;
             string contrasena = textBox2.Text;
             Usuario UsuarioQueInicioSesion = iniciarSesion(usuario, contrasena);
@@ -62,16 +64,34 @@ namespace VeterinariaS
 
         private Usuario iniciarSesion(string Nombre, string Contrasena)
         {
-            //1. comprar el usuario con "Administrador"
-            //2. comparar la contraseña con "Administrador"
-            if (Nombre == "Administrador" && Contrasena == "Administrador") 
+            //1.Extraigo toda lista de usuarios de VeterinariaC 
+                //1.1. Verificar que la variable donde guarde la instancia de Veterinaria y usuarios no sean nulos
+            if (instanciaVeterinariaC.usuarios != null)
             {
-                //3. si ambos son igual entonces retornar un usuario
-                return new Usuario(Nombre, TipoUsuario.administrador, Contrasena);
+                foreach (Usuario usuario in instanciaVeterinariaC.usuarios)
+                {
+                //2.Por cada usuario dentro de la lista de usuarios debe coincidir el nombre y la contraseña
+                //Comparo el nombre y la contraseña que me estan escribiendo con el nombre y la contraseña que ya tengo guardada del usuario
+                    if (usuario.Nombre == Nombre && usuario.Contrasena == Contrasena)
+                    {
+                        //3.Si el nombre y la contraseña coinciden Inicia Sesion
+                        MessageBox.Show("Datos correctos");
+                        return usuario;
+                    }
+
+                               
+                }
+            }
+             
+            //5.Si no tengo nada dentro de la lista de usuarios, entonces creo al administrador
+            if (instanciaVeterinariaC.usuarios == null || instanciaVeterinariaC.usuarios.Length == 0)
+            {
+                Usuario admnistrador = new Usuario(Nombre, TipoUsuario.administrador, Contrasena);
+                return admnistrador;
             }
 
-            //3. si no se returna null 
-            return null;          
+            MessageBox.Show("No se encontro ninguna cuenta");
+            return null;
         }
     }
 }

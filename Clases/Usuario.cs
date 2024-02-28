@@ -12,9 +12,9 @@ namespace Veterinaria.Clases
     public class Usuario
     {
         //atributos 
-        string Nombre { get; set; }
+        public string Nombre { get; set; }
         TipoUsuario TipoUsuario { get; set; }
-        string Contrasena { get; set; }
+        public string Contrasena { get; set; }
         //metodo constructor sin parametros
         public Usuario() { }
         //metodo constructor parametros 
@@ -26,8 +26,9 @@ namespace Veterinaria.Clases
         }
 
         //Obtener (deserializando) todos los usuarios que hay en el sistema
-        public ObtenerTodos()
+        /*public ObtenerTodos()
         {
+            //Directorio donde esta almacenado el archivo que voy a buscar
             string directorio = @"usuarios";
             //1.Obtener todos los archivos de usuario que existan
             string[] archivos = Directory.GetFiles(directorio);
@@ -40,7 +41,7 @@ namespace Veterinaria.Clases
                 Usuario usuarioDeserializado = JsonConvert.DeserializeObject<Usuario>(contenidoArchivo);
             }
             
-        }
+        }*/
 
 
     }
