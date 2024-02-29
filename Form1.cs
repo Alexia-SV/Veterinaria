@@ -23,9 +23,9 @@ namespace VeterinariaS
         public Form1()
         {
             InitializeComponent();
+
             //Llamar al metodo obtenerVeterinaria
             instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -78,8 +78,6 @@ namespace VeterinariaS
                         MessageBox.Show("Datos correctos");
                         return usuario;
                     }
-
-                               
                 }
             }
              
