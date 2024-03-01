@@ -13,7 +13,7 @@ namespace Veterinaria.Clases
     public class VeterinariaC
     {
         // Atributos 
-        [JsonProperty]
+        [JsonProperty]//--->se usa para guardar atributos que son de visibilidad privada
         Consulta[] consultas;
 
         [JsonProperty]
@@ -29,6 +29,7 @@ namespace Veterinaria.Clases
         Usuario[] usuarios;
 
         static string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
+        
 
         // Estatica (no necesito que la clase este instanciada)
         //      new VeterinariaC() <--- Esto no es necesario
@@ -94,7 +95,12 @@ namespace Veterinaria.Clases
         // [x] Necesitamos cambiar la visibilidad de los atributos
         // [x] Necesitamos verificar que se serialize bien todo aunque los attr sean privados
         // [ ] Crear el nuevo formulario y abrirlo desde el inicio de sesión, necesitar
-        // recibir el nuevo form la instancia con la que estamos trabajando
+        // recibir el nuevo form la instancia con la que estamos trabajando ----> solo le paso las primeras lines del form1
+        // [ ] Mostrar el formulario correcto dependiendo del tipo de usuario ---> se hace un switch
+        // [ ] Hacer la clase usuario hacer el metodo para que se calcule los ingresos
+        // [ ] En el form de administrador necesito que agregue un usuario ---> instancia de agregar usuario
+        // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda 
+        
 
         public void agregarUsuario(Usuario usuario)
         {
@@ -124,6 +130,8 @@ namespace Veterinaria.Clases
         public Usuario[] obtenerUsuarios() 
         {
             return this.usuarios; 
+            //Clase.atributo
+            //this.atributo
         }
 
         /// <summary>
@@ -143,5 +151,6 @@ namespace Veterinaria.Clases
             File.WriteAllText(VeterinariaC.rutaArchivo, conversionJson);
         }
     }
+
 }
 ;
