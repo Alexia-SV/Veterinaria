@@ -59,16 +59,16 @@ namespace VeterinariaS
             MessageBox.Show("Datos incorrectos");
             textBox1.Text = " ";
             textBox2.Text = " ";
-
         }
 
         private Usuario iniciarSesion(string Nombre, string Contrasena)
         {
             //1.Extraigo toda lista de usuarios de VeterinariaC 
                 //1.1. Verificar que la variable donde guarde la instancia de Veterinaria y usuarios no sean nulos
-            if (instanciaVeterinariaC.usuarios != null)
+
+            if (instanciaVeterinariaC.obtenerUsuarios() != null)
             {
-                foreach (Usuario usuario in instanciaVeterinariaC.usuarios)
+                foreach (Usuario usuario in instanciaVeterinariaC.obtenerUsuarios() )
                 {
                 //2.Por cada usuario dentro de la lista de usuarios debe coincidir el nombre y la contraseña
                 //Comparo el nombre y la contraseña que me estan escribiendo con el nombre y la contraseña que ya tengo guardada del usuario
@@ -82,7 +82,7 @@ namespace VeterinariaS
             }
              
             //5.Si no tengo nada dentro de la lista de usuarios, entonces creo al administrador
-            if (instanciaVeterinariaC.usuarios == null || instanciaVeterinariaC.usuarios.Length == 0)
+            if (instanciaVeterinariaC.obtenerUsuarios() == null || instanciaVeterinariaC.obtenerUsuarios().Length == 0)
             {
                 Usuario admnistrador = new Usuario(Nombre, TipoUsuario.administrador, Contrasena);
                 return admnistrador;

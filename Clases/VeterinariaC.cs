@@ -13,11 +13,32 @@ namespace Veterinaria.Clases
     public class VeterinariaC
     {
         // Atributos 
+        [JsonProperty]
         Consulta[] consultas;
+
+        [JsonProperty]
         Hospitalizacion[] hospitalizaciones;
+
+        [JsonProperty]
         Mascota[] mascotas;
+        
+        [JsonProperty]
         Dueno[] duenos;
-        public Usuario[] usuarios; 
+        
+        [JsonProperty]
+        Usuario[] usuarios;
+
+        static string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
+
+        // Estatica (no necesito que la clase este instanciada)
+        //      new VeterinariaC() <--- Esto no es necesario
+        //      VeterinariaC.obtenerVeterinaria() <--- Así mandamos a llamar un métodó est.
+        //      VeterianariaC.atributo <--- Así mandamos a llamar un attr.
+        //
+        // Instancia (necesito tener una instancia)
+        //      var instanciaC = new VeterinariaC() <-- Esto es necesario
+        //      instanciaC.miMetodo()
+        //      instanciaC.miAtributo
 
         // Metodo constructor sin parametros 
         public VeterinariaC() {}
@@ -39,14 +60,11 @@ namespace Veterinaria.Clases
         }
 
         public static VeterinariaC obtenerVeterinaria()
-        {
-            // 1. Determinar donde esta guardado el archivo VeterinariaC
-            string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
-            
+        {            
             try
             {
                 //2. Obtener el archivo serializado
-                string contenido = File.ReadAllText(rutaArchivo);
+                string contenido = File.ReadAllText(VeterinariaC.rutaArchivo);
 
                 //3. Deserilizar el archivo y lo retorno 
                 VeterinariaC deserializacionContenido = JsonConvert.DeserializeObject<VeterinariaC>(contenido);
@@ -73,9 +91,10 @@ namespace Veterinaria.Clases
 
         // [x] Necesitamos un método para agregar un usuario a la clase Vet
         // [x] Necesitamos un método que guarde (serialize) Veteriania junto con todos sus atributos
-        // [ ] Necesitamos cambiar la visibilidad de los atributos
-        // [ ] Necesitamos verificar que se serialize bien todo aunque los attr sean privados
-        // [ ] Crear el nuevo formulario y abrirlo desde el inicio de sesión, necesitar recibir el nuevo form la instancia con la que estamos trabajando
+        // [x] Necesitamos cambiar la visibilidad de los atributos
+        // [x] Necesitamos verificar que se serialize bien todo aunque los attr sean privados
+        // [ ] Crear el nuevo formulario y abrirlo desde el inicio de sesión, necesitar
+        // recibir el nuevo form la instancia con la que estamos trabajando
 
         public void agregarUsuario(Usuario usuario)
         {
@@ -85,9 +104,7 @@ namespace Veterinaria.Clases
                 // this.usuarios es nulo, por ende va a fallar más adelante
                 // por que queremos llamar .Concat sobre un nulo.
                 this.usuarios = new Usuario[0];
-            }
-
-
+            }//acumulador-nota care
             // 1. Definiendo nuevoUsuario es de tipo Usuario[] es igual a un
             // nuevo arreglo de tipo Usuario de tamaño 1 el cual contiene el
             // elemento usuario
@@ -104,6 +121,11 @@ namespace Veterinaria.Clases
             this.guardarAtributosVeterinaria();
         }
 
+        public Usuario[] obtenerUsuarios() 
+        {
+            return this.usuarios; 
+        }
+
         /// <summary>
         ///     Cada que modifique algo en esta clase y lo quiera guardar 
         ///     entonces debo de agregar una linea al final del metodo 
@@ -113,14 +135,12 @@ namespace Veterinaria.Clases
         /// </summary>
         private void guardarAtributosVeterinaria()
         {
-            // 1. Determinar donde esta guardado el archivo VeterinariaC
-            string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
 
-            //2. Serializo el obj this el cual contiene todo lo que contiene Veterianaria y me retorna una cadena
+            //1. Serializo el obj this el cual contiene todo lo que contiene Veterianaria y me retorna una cadena
             string conversionJson = JsonConvert.SerializeObject(this);
 
-            //3. Creo el archivo
-            File.WriteAllText(rutaArchivo, conversionJson);
+            //2. Creo el archivo
+            File.WriteAllText(VeterinariaC.rutaArchivo, conversionJson);
         }
     }
 }
