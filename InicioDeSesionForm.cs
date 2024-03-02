@@ -12,15 +12,17 @@ using Veterinaria.Clases;
 using Veterinaria.Enums;
 using System.IO;
 using Newtonsoft.Json;
+using System.Linq.Expressions;
 
 namespace VeterinariaS
 {
-    public partial class Form1 : Form
+    public partial class InicioDeSesionForm : Form
     {
         //Definicion de instanciaVeterinariaC
         static VeterinariaC instanciaVeterinariaC;
         
-        public Form1()
+        
+        public InicioDeSesionForm()
         {
             InitializeComponent();
 
@@ -41,17 +43,37 @@ namespace VeterinariaS
         
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            //1. Obtengo los datos que ingrese el usuario
             string usuario = textBox1.Text;
             string contrasena = textBox2.Text;
-            Usuario UsuarioQueInicioSesion = iniciarSesion(usuario, contrasena);
+            Usuario UsuarioQueInicioSesion = iniciarSesion(usuario, contrasena);//----> almacena el resultado del metodo
 
             //2. Si existe determinar que formulario se va a mostrar 
             if (UsuarioQueInicioSesion  != null) 
             {
-                //3. Mostrar el formulario
-                MessageBox.Show ("Inicio de sesion exitoso");
+                //3. Notificar al usuario con un mensaje
+                MessageBox.Show("Inicio de sesion exitoso");
 
+                //4.Mostrar el form correcto dependiento del tipo de usuario
+                switch (UsuarioQueInicioSesion.TipoUsuario)
+                {
+                    case TipoUsuario.asistente:
+                        //Se muestra formAsistente, es un menu con las opciones:
+                        //dar de alta mascota, dar de alta propietario, dar de alta consulta, dar de alta hospitalizacion
+                        break;
+                    case TipoUsuario.veterinario:
+                        //Se muestra formVeterinario, es un tabcontrol con las opciones:
+                        //dar de alta hospitalizacion, dar alta consulta
+                        break;
+                    case TipoUsuario.administrador:
+                        AdministradorForm instanciaFormAdmin = new AdministradorForm();
+                        instanciaFormAdmin.Show();
+                        this.Hide();
+                        break;
+                    default:
+
+                        break; 
+                }
                 return;
             }
 

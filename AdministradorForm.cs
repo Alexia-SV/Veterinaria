@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace VeterinariaS
 {
-    public partial class Form2 : Form
+    public partial class AdministradorForm : Form
     {
-        public Form2()
+        public AdministradorForm()
         {
             InitializeComponent();
+        }
+
+        private void AdministradorForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

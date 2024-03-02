@@ -1,7 +1,7 @@
 ﻿
 namespace VeterinariaS
 {
-    partial class Form1
+    partial class InicioDeSesionForm
     {
         /// <summary>
         /// Required designer variable.

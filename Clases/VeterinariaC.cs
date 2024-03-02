@@ -94,12 +94,14 @@ namespace Veterinaria.Clases
         // [x] Necesitamos un método que guarde (serialize) Veteriania junto con todos sus atributos
         // [x] Necesitamos cambiar la visibilidad de los atributos
         // [x] Necesitamos verificar que se serialize bien todo aunque los attr sean privados
-        // [ ] Crear el nuevo formulario y abrirlo desde el inicio de sesión, necesitar
+        // [x] Crear el nuevo formulario y abrirlo desde el inicio de sesión, necesitar
         // recibir el nuevo form la instancia con la que estamos trabajando ----> solo le paso las primeras lines del form1
-        // [ ] Mostrar el formulario correcto dependiendo del tipo de usuario ---> se hace un switch
-        // [ ] Hacer la clase usuario hacer el metodo para que se calcule los ingresos
+        // [x] Mostrar el formulario correcto dependiendo del tipo de usuario ---> se hace un switch
+        // [ ] En la clase usuario hacer el metodo para que se calcule los ingresos
+        // [ ] Arreglar el formulario que se le va a mostrar al admin
         // [ ] En el form de administrador necesito que agregue un usuario ---> instancia de agregar usuario
-        // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda 
+        // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda
+        // [ ] Hacer un metodo para que lo que tengo en evento clic del boton sea entendible
         
 
         public void agregarUsuario(Usuario usuario)

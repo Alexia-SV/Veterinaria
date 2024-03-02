@@ -13,7 +13,7 @@ namespace Veterinaria.Clases
     {
         //atributos 
         public string Nombre { get; set; }
-        TipoUsuario TipoUsuario { get; set; }
+        public TipoUsuario TipoUsuario { get; set; }
         public string Contrasena { get; set; }
         //metodo constructor sin parametros
         public Usuario() { }
