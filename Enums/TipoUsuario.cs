@@ -7,4 +7,6 @@ using System.Threading.Tasks;
 namespace Veterinaria.Enums
 {
     public enum TipoUsuario { administrador, asistente, veterinario }
+    
+    
 }

@@ -30,6 +30,7 @@ namespace Veterinaria.Clases
 
         static string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
         
+        
 
         // Estatica (no necesito que la clase este instanciada)
         //      new VeterinariaC() <--- Esto no es necesario
@@ -99,7 +100,7 @@ namespace Veterinaria.Clases
         // [x] Mostrar el formulario correcto dependiendo del tipo de usuario ---> se hace un switch
         // [ ] En la clase usuario hacer el metodo para que se calcule los ingresos
         // [x] Arreglar el formulario que se le va a mostrar al admin
-        // [ ] En el form de administrador necesito que agregue un usuario ---> instancia de agregar usuario
+        // [x] En el form de administrador necesito que agregue un usuario ---> instancia de agregar usuario
         // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda
         // [ ] Hacer un metodo para que lo que tengo en evento clic del boton sea entendible
         // [ ] Revisar el codigo de Roger y subir el codigo de Roger a github y ver porque no puede subir sus cambios a gitbuh
