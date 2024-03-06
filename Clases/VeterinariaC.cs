@@ -106,7 +106,19 @@ namespace Veterinaria.Clases
         // [ ] Revisar el codigo de Roger y subir el codigo de Roger a github y ver porque no puede subir sus cambios a gitbuh
         // [ ] Hacer le menu para el tipo de acceso de asistente 
 
+        public void agregarConsulta(Consulta consulta)
+        {
+            if (this.consultas == null)
+            {
+                this.consultas = new Consulta[0];
+            }
 
+            Consulta[] nuevaConsulta = new Consulta[1] { consulta };
+            Consulta[] combiArregloConsulta = this.consultas.Concat(nuevaConsulta).ToArray();
+            consultas = combiArregloConsulta;
+
+            this.guardarAtributosVeterinaria();
+        }
 
         
         public void agregarMascota(Mascota mascota)
