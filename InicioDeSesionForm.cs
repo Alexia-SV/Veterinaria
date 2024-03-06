@@ -64,6 +64,7 @@ namespace VeterinariaS
                     case TipoUsuario.veterinario:
                         //Se muestra formVeterinario, es un tabcontrol con las opciones:
                         //dar de alta hospitalizacion, dar alta consulta
+                        
                         break;
                     case TipoUsuario.administrador:
                         AdministradorForm instanciaFormAdmin = new AdministradorForm();
