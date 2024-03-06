@@ -104,8 +104,39 @@ namespace Veterinaria.Clases
         // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda
         // [ ] Hacer un metodo para que lo que tengo en evento clic del boton sea entendible
         // [ ] Revisar el codigo de Roger y subir el codigo de Roger a github y ver porque no puede subir sus cambios a gitbuh
-        // 
+        // [ ] Hacer le menu para el tipo de acceso de asistente 
 
+
+
+        
+        public void agregarMascota(Mascota mascota)
+        {
+            if (this.mascotas == null)
+            {
+                this.mascotas = new Mascota[0];
+            }
+
+            Mascota[] nuevaMascota = new Mascota[1] { mascota };
+            Mascota[] combiArregloMascota = this.mascotas.Concat(nuevaMascota).ToArray();
+            mascotas = combiArregloMascota;
+
+            this.guardarAtributosVeterinaria();
+        }
+        public void agregarDueno(Dueno dueno)
+        {
+            if (this.duenos == null)
+            {
+                this.duenos = new Dueno[0];
+            }
+
+            Dueno[] nuevoDueno = new Dueno[1] { dueno };
+
+            Dueno[] combiArregloDueno = this.duenos.Concat(nuevoDueno).ToArray();
+
+            duenos = combiArregloDueno;
+
+            this.guardarAtributosVeterinaria();
+        }
         public void agregarUsuario(Usuario usuario)
         {
             // 0.1. Si this.usuarios es nulo, entonces le ponemos un valor

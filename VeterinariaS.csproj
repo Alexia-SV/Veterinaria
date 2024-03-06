@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaDuenoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaDuenoForm.Designer.cs">
+      <DependentUpon>AltaDuenoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaMascotaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaMascotaForm.Designer.cs">
+      <DependentUpon>AltaMascotaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Consulta.cs" />
     <Compile Include="Clases\Dueno.cs" />
     <Compile Include="Clases\Hospitalizacion.cs" />
@@ -72,6 +84,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AltaDuenoForm.resx">
+      <DependentUpon>AltaDuenoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaMascotaForm.resx">
+      <DependentUpon>AltaMascotaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioDeSesionForm.resx">
       <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
     </EmbeddedResource>
