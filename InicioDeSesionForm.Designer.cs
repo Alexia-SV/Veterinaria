@@ -41,7 +41,7 @@ namespace VeterinariaS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 172);
+            this.label1.Location = new System.Drawing.Point(112, 136);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
@@ -51,7 +51,7 @@ namespace VeterinariaS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 239);
+            this.label2.Location = new System.Drawing.Point(88, 203);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
@@ -60,7 +60,7 @@ namespace VeterinariaS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(259, 172);
+            this.textBox1.Location = new System.Drawing.Point(183, 136);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 22);
@@ -68,7 +68,7 @@ namespace VeterinariaS
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(259, 235);
+            this.textBox2.Location = new System.Drawing.Point(183, 199);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
@@ -77,7 +77,7 @@ namespace VeterinariaS
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(259, 302);
+            this.button1.Location = new System.Drawing.Point(183, 266);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 64);
@@ -88,19 +88,22 @@ namespace VeterinariaS
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::VeterinariaS.Properties.Resources.logo_vet;
-            this.pictureBox1.Location = new System.Drawing.Point(567, 91);
+            this.pictureBox1.Location = new System.Drawing.Point(492, 64);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 314);
+            this.pictureBox1.Size = new System.Drawing.Size(342, 311);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // InicioDeSesionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(918, 445);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -108,7 +111,10 @@ namespace VeterinariaS
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(936, 492);
+            this.MinimumSize = new System.Drawing.Size(936, 492);
             this.Name = "InicioDeSesionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Usuario";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

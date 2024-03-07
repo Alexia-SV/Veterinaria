@@ -50,6 +50,18 @@ namespace VeterinariaS
             //4. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Usuario registrado de forma correcta");
 
+            //5. Limpiar los controladores 
+            textBox1.Text = " ";
+            textBox2.Text = " ";
+            comboBox1.SelectedItem = null;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InicioDeSesionForm instanciaFormInicio = new InicioDeSesionForm();
+            instanciaFormInicio.Show();
+            this.Hide();
         }
     }
 }

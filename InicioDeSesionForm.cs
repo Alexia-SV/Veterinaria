@@ -19,7 +19,7 @@ namespace VeterinariaS
     public partial class InicioDeSesionForm : Form
     {
         //Definicion de instanciaVeterinariaC
-        static VeterinariaC instanciaVeterinariaC;
+        VeterinariaC instanciaVeterinariaC;
         
         
         public InicioDeSesionForm()
@@ -52,7 +52,7 @@ namespace VeterinariaS
             if (UsuarioQueInicioSesion  != null) 
             {
                 //3. Notificar al usuario con un mensaje
-                MessageBox.Show("Inicio de sesion exitoso");
+                MessageBox.Show("Bienvenido " + UsuarioQueInicioSesion.Nombre);
 
                 //4.Mostrar el form correcto dependiento del tipo de usuario
                 switch (UsuarioQueInicioSesion.TipoUsuario)
@@ -60,11 +60,16 @@ namespace VeterinariaS
                     case TipoUsuario.asistente:
                         //Se muestra formAsistente, es un menu con las opciones:
                         //dar de alta mascota, dar de alta propietario, dar de alta consulta, dar de alta hospitalizacion
+                        MenuAsistenteForm instanciaFormAsistente = new MenuAsistenteForm();
+                        instanciaFormAsistente.Show();
+                        this.Hide();
+
                         break;
                     case TipoUsuario.veterinario:
-                        //Se muestra formVeterinario, es un tabcontrol con las opciones:
-                        //dar de alta hospitalizacion, dar alta consulta
-                        
+                        AltaConsultaForm instanciaFormConsulta = new AltaConsultaForm();
+                        instanciaFormConsulta.Show();
+                        this.Hide();
+
                         break;
                     case TipoUsuario.administrador:
                         AdministradorForm instanciaFormAdmin = new AdministradorForm();
@@ -98,7 +103,7 @@ namespace VeterinariaS
                     if (usuario.Nombre == Nombre && usuario.Contrasena == Contrasena)
                     {
                         //3.Si el nombre y la contraseña coinciden Inicia Sesion
-                        MessageBox.Show("Datos correctos");
+                        MessageBox.Show("Datos correctos ");
                         return usuario;
                     }
                 }
@@ -108,11 +113,19 @@ namespace VeterinariaS
             if (instanciaVeterinariaC.obtenerUsuarios() == null || instanciaVeterinariaC.obtenerUsuarios().Length == 0)
             {
                 Usuario admnistrador = new Usuario(Nombre, TipoUsuario.administrador, Contrasena);
+                instanciaVeterinariaC.agregarUsuario(admnistrador);
+                
                 return admnistrador;
+                
             }
 
             MessageBox.Show("No se encontro ninguna cuenta");
             return null;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

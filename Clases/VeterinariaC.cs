@@ -103,7 +103,6 @@ namespace Veterinaria.Clases
         // [x] En el form de administrador necesito que agregue un usuario ---> instancia de agregar usuario
         // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda
         // [ ] Hacer un metodo para que lo que tengo en evento clic del boton sea entendible
-        // [ ] Revisar el codigo de Roger y subir el codigo de Roger a github y ver porque no puede subir sus cambios a gitbuh
         // [ ] Hacer le menu para el tipo de acceso de asistente 
 
         public void agregarConsulta(Consulta consulta)

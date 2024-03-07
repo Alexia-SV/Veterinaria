@@ -34,13 +34,18 @@ namespace VeterinariaS
             Especie especieEnum = (Especie)Enum.Parse(typeof(Especie), especie);
             
             //2. creo el nuevo usuario con mis datos 
-            Mascota nuevaMascota = new Mascota(nombre, dueno, especieEnum );
+            //Mascota nuevaMascota = new Mascota(nombre, dueno, especieEnum );
 
             //3. ese usuario se lo paso a mi metodo agregarUsuario
-            instanciaVeterinariaC.agregarMascota(nuevaMascota);
+            //instanciaVeterinariaC.agregarMascota(nuevaMascota);
 
             //4. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Mascota registrada con exito");
+        }
+
+        private void AltaMascotaForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

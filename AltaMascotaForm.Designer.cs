@@ -110,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AltaMascotaForm";
             this.Text = "AltaMascotaForm";
+            this.Load += new System.EventHandler(this.AltaMascotaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
