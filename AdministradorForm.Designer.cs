@@ -78,7 +78,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 378);
+            this.tabControl1.Size = new System.Drawing.Size(570, 378);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -94,16 +94,16 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(768, 349);
+            this.tabPage1.Size = new System.Drawing.Size(562, 349);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registrar usuario";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(419, 92);
+            this.button1.Location = new System.Drawing.Point(103, 265);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 84);
+            this.button1.Size = new System.Drawing.Size(143, 50);
             this.button1.TabIndex = 6;
             this.button1.Text = "Agregar usuario";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(768, 399);
+            this.tabPage2.Size = new System.Drawing.Size(768, 349);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Obtener ingresos";
             this.tabPage2.UseVisualStyleBackColor = true;
