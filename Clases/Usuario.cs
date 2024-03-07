@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Veterinaria.Enums;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Veterinaria.Clases
 {
     public class Usuario
     {
         //atributos 
-        string Nombre { get; set; }
-        TipoUsuario TipoUsuario { get; set; }
-        string Contrasena { get; set; }
+        public string Nombre { get; set; }
+        public TipoUsuario TipoUsuario { get; set; }
+        public string Contrasena { get; set; }
         //metodo constructor sin parametros
         public Usuario() { }
         //metodo constructor parametros 
@@ -23,4 +25,6 @@ namespace Veterinaria.Clases
             Contrasena = laContrasena;
         }
     }
+
+
 }

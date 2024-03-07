@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,25 +49,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaConsultaForm.Designer.cs">
+      <DependentUpon>AltaConsultaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaDuenoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaDuenoForm.Designer.cs">
+      <DependentUpon>AltaDuenoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaMascotaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaMascotaForm.Designer.cs">
+      <DependentUpon>AltaMascotaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Consulta.cs" />
     <Compile Include="Clases\Dueno.cs" />
     <Compile Include="Clases\Hospitalizacion.cs" />
     <Compile Include="Clases\Mascota.cs" />
     <Compile Include="Clases\Servicio.cs" />
     <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="Clases\Veterinaria.cs" />
+    <Compile Include="Clases\VeterinariaC.cs" />
     <Compile Include="Enums\TipoUsuario.cs" />
     <Compile Include="Enums\Especie.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="InicioDeSesionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="InicioDeSesionForm.Designer.cs">
+      <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradorForm.Designer.cs">
+      <DependentUpon>AdministradorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAsistenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAsistenteForm.Designer.cs">
+      <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AltaConsultaForm.resx">
+      <DependentUpon>AltaConsultaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaDuenoForm.resx">
+      <DependentUpon>AltaDuenoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaMascotaForm.resx">
+      <DependentUpon>AltaMascotaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioDeSesionForm.resx">
+      <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministradorForm.resx">
+      <DependentUpon>AdministradorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAsistenteForm.resx">
+      <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +124,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,7 +139,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo vet.png" />
+    <None Include="Resources\logo vet1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
