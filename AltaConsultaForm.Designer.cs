@@ -45,8 +45,8 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,10 +194,6 @@
             this.richTextBox1.TabIndex = 19;
             this.richTextBox1.Text = "";
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(Veterinaria.Clases.Usuario);
-            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(492, 222);
@@ -205,6 +201,10 @@
             this.richTextBox2.Size = new System.Drawing.Size(205, 96);
             this.richTextBox2.TabIndex = 20;
             this.richTextBox2.Text = "";
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Veterinaria.Clases.Usuario);
             // 
             // AltaConsultaForm
             // 
@@ -230,6 +230,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AltaConsultaForm";
             this.Text = "AltaConsultaForm";
+            this.Load += new System.EventHandler(this.AltaConsultaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

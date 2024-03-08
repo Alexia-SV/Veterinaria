@@ -22,8 +22,6 @@ namespace VeterinariaS
             InitializeComponent();
             //Llamar al metodo obtenerVeterinaria
             instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
-
-
         }
 
         private void AdministradorForm_Load(object sender, EventArgs e)
@@ -54,7 +52,6 @@ namespace VeterinariaS
             textBox1.Text = " ";
             textBox2.Text = " ";
             comboBox1.SelectedItem = null;
-
         }
 
         private void button2_Click(object sender, EventArgs e)

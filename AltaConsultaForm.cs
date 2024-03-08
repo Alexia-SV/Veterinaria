@@ -28,10 +28,11 @@ namespace VeterinariaS
             //1.1 El comboBox va a usar la propiedad de Nombre dentro del usuario
             comboBox2.DisplayMember = "Nombre";
 
-            //2. Filtro que por cada usuario si el usuario es de tipo veterinario
+            //2. Filtro que por cada usuario 
             foreach (Usuario usuario in listaUsuarios)
             {
-                if(usuario.TipoUsuario == TipoUsuario.veterinario)
+                //si el usuario es de tipo veterinario
+                if (usuario.TipoUsuario == TipoUsuario.veterinario)
                 {
                     //3. Entonces que aparezca en el comboBox
                     comboBox2.Items.Add(usuario); 
@@ -57,6 +58,11 @@ namespace VeterinariaS
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void AltaConsultaForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
