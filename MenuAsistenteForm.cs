@@ -19,20 +19,27 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AltaMascotaForm instanciaFormMascota = new AltaMascotaForm();
-            instanciaFormMascota.Show();            
+            MascotaForm instancia = new MascotaForm();
+            instancia.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AltaDuenoForm instanciaFormDueno = new AltaDuenoForm();
-            instanciaFormDueno.Show();
+            PropietarioForm instanciaPropietarioForm = new PropietarioForm();
+            instanciaPropietarioForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             AltaConsultaForm instanciaFormConsulta = new AltaConsultaForm();
             instanciaFormConsulta.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            InicioDeSesionForm instancia = new InicioDeSesionForm();
+            instancia.Show();
+            this.Hide();
         }
     }
 }

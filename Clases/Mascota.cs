@@ -8,9 +8,9 @@ namespace Veterinaria.Clases
     public class Mascota
     {
         //atributos
-        string Nombre { get; set; }
-        Dueno Dueno { get; set; }
-        Especie Especie { get; set; }
+        public string Nombre { get; set; }
+        public Dueno Dueno { get; set; }
+        public Especie Especie { get; set; }
         //metodo constructor sin parametros
         public Mascota() { }
         //metodo constructor parametros 

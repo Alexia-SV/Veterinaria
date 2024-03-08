@@ -46,6 +46,10 @@ namespace VeterinariaS
 
             //4. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Propietario fue registrado correctamente");
+            textBox1.Text = " ";
+            textBox2 .Text = " ";
+            textBox3 .Text = " ";
+
         }
     }
 }

@@ -133,6 +133,7 @@ namespace Veterinaria.Clases
 
             this.guardarAtributosVeterinaria();
         }
+
         public void agregarDueno(Dueno dueno)
         {
             if (this.duenos == null)
@@ -148,6 +149,7 @@ namespace Veterinaria.Clases
 
             this.guardarAtributosVeterinaria();
         }
+
         public void agregarUsuario(Usuario usuario)
         {
             // 0.1. Si this.usuarios es nulo, entonces le ponemos un valor
@@ -178,6 +180,16 @@ namespace Veterinaria.Clases
             return this.usuarios; 
             //Clase.atributo
             //this.atributo
+        }
+
+        public Dueno[] obtenerDuenos()
+        {
+            return this.duenos;
+        }
+
+        public Mascota[] obtenerMascotas()
+        {
+            return this.mascotas;
         }
 
         /// <summary>

@@ -21,23 +21,33 @@ namespace VeterinariaS
             InitializeComponent();
             //Llamar al metodo obtenerVeterinaria
             instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
+            //1. Traer todos los dueños de la instancia de Veterinaria C 
+            Dueno[] listaDuenos = instanciaVeterinariaC.obtenerDuenos();
+            //1.1 El comboBox1 va a usar la propiedad de Nombre dentro del dueno
+            comboBox1.DisplayMember = "Nombre";
+            //2. Filtro que por cada dueno 
+            foreach (Dueno dueno in listaDuenos)
+            {
+                comboBox1.Items.Add(dueno);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string nombre = textBox1.Text;
-            string dueno = textBox2.Text;
+            Dueno dueno = (Dueno)comboBox1.SelectedItem;
             string especie = comboBox2.SelectedItem.ToString();
 
             
-            //1.2 convertir la cadena que obtengo en tipoUsuario en un Enum para poder trabajarlo
+            //1.2 convertir la cadena que obtengo en especia en un Enum para poder trabajarlo
             Especie especieEnum = (Especie)Enum.Parse(typeof(Especie), especie);
             
-            //2. creo el nuevo usuario con mis datos 
-            //Mascota nuevaMascota = new Mascota(nombre, dueno, especieEnum );
+            
+            //2. creo a la nueva mascota con mis datos 
+            Mascota nuevaMascota = new Mascota(nombre, dueno, especieEnum );
 
-            //3. ese usuario se lo paso a mi metodo agregarUsuario
-            //instanciaVeterinariaC.agregarMascota(nuevaMascota);
+            //3. Esa mascota se lo paso a mi metodo agregarMascota
+            instanciaVeterinariaC.agregarMascota(nuevaMascota);
 
             //4. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Mascota registrada con exito");

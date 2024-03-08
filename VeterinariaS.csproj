@@ -88,6 +88,12 @@
     <Compile Include="AdministradorForm.Designer.cs">
       <DependentUpon>AdministradorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MascotaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MascotaForm.Designer.cs">
+      <DependentUpon>MascotaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAsistenteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropietarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropietarioForm.Designer.cs">
+      <DependentUpon>PropietarioForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AltaConsultaForm.resx">
       <DependentUpon>AltaConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +123,9 @@
     <EmbeddedResource Include="AdministradorForm.resx">
       <DependentUpon>AdministradorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MascotaForm.resx">
+      <DependentUpon>MascotaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuAsistenteForm.resx">
       <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PropietarioForm.resx">
+      <DependentUpon>PropietarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Veterinaria.Clases.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
