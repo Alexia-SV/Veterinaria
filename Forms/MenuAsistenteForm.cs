@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterinariaS.Forms;
 
 namespace VeterinariaS
 {
@@ -31,8 +32,9 @@ namespace VeterinariaS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AltaConsultaForm instanciaFormConsulta = new AltaConsultaForm();
-            instanciaFormConsulta.Show();
+            ConsultasForm instancia = new ConsultasForm();
+            instancia.Show();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

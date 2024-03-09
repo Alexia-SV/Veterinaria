@@ -192,6 +192,11 @@ namespace Veterinaria.Clases
             return this.mascotas;
         }
 
+        public Consulta[] obtenerConsultas()
+        {
+            return this.consultas;
+        }
+
         /// <summary>
         ///     Cada que modifique algo en esta clase y lo quiera guardar 
         ///     entonces debo de agregar una linea al final del metodo 

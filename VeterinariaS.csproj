@@ -49,22 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaConsultaForm.cs">
+    <Compile Include="Forms\AltaConsultaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaConsultaForm.Designer.cs">
+    <Compile Include="Forms\AltaConsultaForm.Designer.cs">
       <DependentUpon>AltaConsultaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaDuenoForm.cs">
+    <Compile Include="Forms\AltaDuenoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaDuenoForm.Designer.cs">
+    <Compile Include="Forms\AltaDuenoForm.Designer.cs">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaMascotaForm.cs">
+    <Compile Include="Forms\AltaMascotaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaMascotaForm.Designer.cs">
+    <Compile Include="Forms\AltaMascotaForm.Designer.cs">
       <DependentUpon>AltaMascotaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Consulta.cs" />
@@ -76,57 +76,66 @@
     <Compile Include="Clases\VeterinariaC.cs" />
     <Compile Include="Enums\TipoUsuario.cs" />
     <Compile Include="Enums\Especie.cs" />
-    <Compile Include="InicioDeSesionForm.cs">
+    <Compile Include="Forms\ConsultasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioDeSesionForm.Designer.cs">
+    <Compile Include="Forms\ConsultasForm.Designer.cs">
+      <DependentUpon>ConsultasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InicioDeSesionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InicioDeSesionForm.Designer.cs">
       <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministradorForm.cs">
+    <Compile Include="Forms\AdministradorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministradorForm.Designer.cs">
+    <Compile Include="Forms\AdministradorForm.Designer.cs">
       <DependentUpon>AdministradorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MascotaForm.cs">
+    <Compile Include="Forms\MascotaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MascotaForm.Designer.cs">
+    <Compile Include="Forms\MascotaForm.Designer.cs">
       <DependentUpon>MascotaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAsistenteForm.cs">
+    <Compile Include="Forms\MenuAsistenteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAsistenteForm.Designer.cs">
+    <Compile Include="Forms\MenuAsistenteForm.Designer.cs">
       <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropietarioForm.cs">
+    <Compile Include="Forms\PropietarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PropietarioForm.Designer.cs">
+    <Compile Include="Forms\PropietarioForm.Designer.cs">
       <DependentUpon>PropietarioForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AltaConsultaForm.resx">
+    <EmbeddedResource Include="Forms\AltaConsultaForm.resx">
       <DependentUpon>AltaConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaDuenoForm.resx">
+    <EmbeddedResource Include="Forms\AltaDuenoForm.resx">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaMascotaForm.resx">
+    <EmbeddedResource Include="Forms\AltaMascotaForm.resx">
       <DependentUpon>AltaMascotaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InicioDeSesionForm.resx">
+    <EmbeddedResource Include="Forms\ConsultasForm.resx">
+      <DependentUpon>ConsultasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InicioDeSesionForm.resx">
       <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdministradorForm.resx">
+    <EmbeddedResource Include="Forms\AdministradorForm.resx">
       <DependentUpon>AdministradorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MascotaForm.resx">
+    <EmbeddedResource Include="Forms\MascotaForm.resx">
       <DependentUpon>MascotaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAsistenteForm.resx">
+    <EmbeddedResource Include="Forms\MenuAsistenteForm.resx">
       <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -139,10 +148,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="PropietarioForm.resx">
+    <EmbeddedResource Include="Forms\PropietarioForm.resx">
       <DependentUpon>PropietarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="Forms\packages.config" />
+    <None Include="Properties\DataSources\Veterinaria.Clases.Mascota.datasource" />
     <None Include="Properties\DataSources\Veterinaria.Clases.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,7 +165,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Forms\App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo vet1.png" />

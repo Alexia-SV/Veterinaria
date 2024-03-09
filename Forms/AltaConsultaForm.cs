@@ -38,6 +38,19 @@ namespace VeterinariaS
                     comboBox2.Items.Add(usuario); 
                 }
             }
+
+            //4. Traer todas las macotas de la instancia de Veterinaria C
+            Mascota[ ] listaMascotas = instanciaVeterinariaC.obtenerMascotas();
+
+            //4.1 El comboBox va a usar la propiedad de Nombre dentro de la mascota
+            comboBox1.DisplayMember = "Nombre";
+
+            //5. Por cada mascota dentro de la listaMascotas
+            foreach (Mascota mascota in listaMascotas)
+            {
+                //6. Escribirla en el comboBox
+                comboBox1.Items.Add(mascota);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -61,6 +74,11 @@ namespace VeterinariaS
         }
 
         private void AltaConsultaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

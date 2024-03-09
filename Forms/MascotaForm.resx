@@ -117,4 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Especie.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DuenoNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="mascotaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>11, 11</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>41</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAD/////////////////////////////////////////////////////////////////////////////
+        //////////////7+/v/9/f3//P39//z9/P/+/f3//v79/////v///////v79//79/f/9/fz//P39//39
+        /f/+/v7/////////////////////////////////////////////////////////////////////////
+        ////////////////////////8e3v/5Gkkv9Rd1n/ZWxV/6aZaf+0qGn/5+PT//Lx6v+7sG3/sKFu/29u
+        V/9Oak//fpqL//Dw8f///////////6OvqP8IUyL/ATEL/wcpC/9qVBj/emgU/9fUxv/r6un/gXIf/4Np
+        F/8RKQj/AzAN/wBOJP+PraL///////Xv8v9NiWn/AHk1/xdRI/8HVin/OTEM/3prU//2+Pj//f///4R8
+        a/9EOQj/C1Yk/xVUJv8AcDb/L4Ra//fz9f/j3N//PZ11/wBwMf8YUCT/BHs7/wUdAv+jm5P/uMC2/7K5
+        sP+xrqj/CB0F/wN0NP8XUCD/AGks/0Kddv/t6Ov/29vb/7rWu/9Lsnb/CHc6/wBlKv9bXEv/3N7V/3Zy
+        b/9qZmT/3+HZ/25tW/8BWyj/BXo8/1e1fP/H1cH/4N/h/9zh4P/l59n////x/3vUq/8nh1j/r6KZ////
+        //+jnZD/k4t9///////DtrH/M35X/4TZsv///+v/4eLU/+Dj4//r7Oz/3eHZ///50//F4L3/K4xa/0xZ
+        P/+1q5//xsG8/9DPyv+yrZ//XmVN/ymOX//B5Mz////s/93h2//u7+7/+vr5/9nd2f///OP/dL+G/wB+
+        Of85QCD/Z1Mt/723qP/PzL7/c2M4/0M/Gf8Afzj/ZMWK///+8//b39z//Pz7///////n6ef/8Orn/9r7
+        6f8zr3X/Z3Fz/316f/+Edkv/hnhQ/3p6bv9tbnr/L6Jn/9D61//u5t3/6ezq//////////////7+/+Pl
+        4v/29eT/8uif/4OBf/+JksP/jYBP/42BTP9+hq3/gYWX/+PZmf/49OL/4eXl////////////////////
+        ///9/fz/5unl/+/x4v+LhHz/e3Ba//HusP/9+73/h35j/3p1cv/l5tr/5urn//7+/f//////////////
+        //////////////38/P/9//7/sKyl/7m1pf/5+uL/9/ff/8fFs/+kn5P//v////39/P//////////////
+        ///////////////////////////////////6+/v/8/T1//P19v/6+vv/////////////////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

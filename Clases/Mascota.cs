@@ -11,6 +11,7 @@ namespace Veterinaria.Clases
         public string Nombre { get; set; }
         public Dueno Dueno { get; set; }
         public Especie Especie { get; set; }
+        public string NombreDueno { get; set; }
         //metodo constructor sin parametros
         public Mascota() { }
         //metodo constructor parametros 
