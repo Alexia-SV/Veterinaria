@@ -43,5 +43,16 @@ namespace VeterinariaS
             instancia.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HospitalizacionForm instancia = new HospitalizacionForm();
+            instancia.Show();
+        }
+
+        private void MenuAsistenteForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

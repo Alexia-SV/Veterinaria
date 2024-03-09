@@ -82,17 +82,23 @@
     <Compile Include="Forms\ConsultasForm.Designer.cs">
       <DependentUpon>ConsultasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HospitalizacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HospitalizacionForm.Designer.cs">
+      <DependentUpon>HospitalizacionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InicioDeSesionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\InicioDeSesionForm.Designer.cs">
       <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdministradorForm.cs">
+    <Compile Include="Forms\AltaUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdministradorForm.Designer.cs">
-      <DependentUpon>AdministradorForm.cs</DependentUpon>
+    <Compile Include="Forms\AltaUsuarioForm.Designer.cs">
+      <DependentUpon>AltaUsuarioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MascotaForm.cs">
       <SubType>Form</SubType>
@@ -100,11 +106,35 @@
     <Compile Include="Forms\MascotaForm.Designer.cs">
       <DependentUpon>MascotaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MenuAdministradorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuAdministradorForm.Designer.cs">
+      <DependentUpon>MenuAdministradorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MenuAsistenteForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MenuAsistenteForm.Designer.cs">
       <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuVeterinarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuVeterinarioForm.Designer.cs">
+      <DependentUpon>MenuVeterinarioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiciosMascotaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiciosMascotaForm.Designer.cs">
+      <DependentUpon>ServiciosMascotaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiciosVeterinarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiciosVeterinarioForm.Designer.cs">
+      <DependentUpon>ServiciosVeterinarioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,17 +156,32 @@
     <EmbeddedResource Include="Forms\ConsultasForm.resx">
       <DependentUpon>ConsultasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HospitalizacionForm.resx">
+      <DependentUpon>HospitalizacionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InicioDeSesionForm.resx">
       <DependentUpon>InicioDeSesionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdministradorForm.resx">
-      <DependentUpon>AdministradorForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AltaUsuarioForm.resx">
+      <DependentUpon>AltaUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MascotaForm.resx">
       <DependentUpon>MascotaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuAdministradorForm.resx">
+      <DependentUpon>MenuAdministradorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuAsistenteForm.resx">
       <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuVeterinarioForm.resx">
+      <DependentUpon>MenuVeterinarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServiciosMascotaForm.resx">
+      <DependentUpon>ServiciosMascotaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServiciosVeterinarioForm.resx">
+      <DependentUpon>ServiciosVeterinarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

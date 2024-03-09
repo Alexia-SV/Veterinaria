@@ -82,10 +82,54 @@ namespace VeterinariaS
         {
             //1. obtener los datos que ingresan
             Mascota mascota = (Mascota) comboBox1.SelectedItem;
+            DateTime fechaConsulta = dateTimePicker1.Value;
+            TipoUsuario Veterinario = (TipoUsuario)comboBox2.SelectedItem;
+            float costoInsumos;
+            
+            if (float.TryParse(textBox2.Text, out costoInsumos)) { } else{ }
+            float costo = costoInsumos + 300;
+            
+            string diagnostico = richTextBox1.Text;
+            string tratamiento = richTextBox2.Text;
+            bool hospitalizacion;
+            
+            if (radioButton1.Checked)
+            {
+                hospitalizacion = true;
+            } else
+            {
+                hospitalizacion = false;
+            }
+
             //2. creo la nueva consulta con mis datos
+            Consulta nuevaConsulta = new Consulta(diagnostico, tratamiento, hospitalizacion);
+
             //3. esa consulta se lo paso a mi metodo agregarConsulta
+            instanciaVeterinariaC.agregarConsulta(nuevaConsulta);
+
             //4. Mandar un mesaje de que la consulta se registro de forma correcta
+            MessageBox.Show("Consulta registrada");
             //5. Limpiar los controladores
+            comboBox1 = null;
+            dateTimePicker1 = null;
+            comboBox2 = null;
+            textBox2.Text = " " ;
+            richTextBox1.Text = " " ;
+            richTextBox2.Text = " " ;
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e, float costo)
+        {
+            float costoInsumos;
+
+            if (float.TryParse(textBox2.Text, out costoInsumos)) { } else { }
+            float costoTotal = costoInsumos + 300;
+
+            MessageBox.Show("El costo total de la consulta es de $ " + costoTotal + " pesos");
+            
         }
     }
 }

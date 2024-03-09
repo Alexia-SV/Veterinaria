@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MascotaForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DuenoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DuenoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
@@ -64,6 +64,24 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(523, 197);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Especie
+            // 
+            this.Especie.DataPropertyName = "Especie";
+            this.Especie.HeaderText = "Especie";
+            this.Especie.Name = "Especie";
+            // 
+            // DuenoNombre
+            // 
+            this.DuenoNombre.DataPropertyName = "NombreDueno";
+            this.DuenoNombre.HeaderText = "Propietario";
+            this.DuenoNombre.Name = "DuenoNombre";
             // 
             // label1
             // 
@@ -114,24 +132,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Especie";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 161;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Especie
-            // 
-            this.Especie.DataPropertyName = "Especie";
-            this.Especie.HeaderText = "Especie";
-            this.Especie.Name = "Especie";
-            // 
-            // DuenoNombre
-            // 
-            this.DuenoNombre.DataPropertyName = "NombreDueno";
-            this.DuenoNombre.HeaderText = "Propietario";
-            this.DuenoNombre.Name = "DuenoNombre";
             // 
             // mascotaBindingSource
             // 

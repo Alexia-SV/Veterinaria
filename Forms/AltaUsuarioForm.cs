@@ -12,12 +12,12 @@ using Veterinaria.Enums;
 
 namespace VeterinariaS
 {
-    public partial class AdministradorForm : Form
+    public partial class AltaUsuarioForm : Form
     {
         //Definicion de instanciaVeterinariaC
         static VeterinariaC instanciaVeterinariaC;
         
-        public AdministradorForm()
+        public AltaUsuarioForm()
         {
             InitializeComponent();
             //Llamar al metodo obtenerVeterinaria
@@ -59,6 +59,11 @@ namespace VeterinariaS
             InicioDeSesionForm instanciaFormInicio = new InicioDeSesionForm();
             instanciaFormInicio.Show();
             this.Hide();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

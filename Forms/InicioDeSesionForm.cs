@@ -13,6 +13,7 @@ using Veterinaria.Enums;
 using System.IO;
 using Newtonsoft.Json;
 using System.Linq.Expressions;
+using VeterinariaS.Forms;
 
 namespace VeterinariaS
 {
@@ -66,13 +67,13 @@ namespace VeterinariaS
 
                         break;
                     case TipoUsuario.veterinario:
-                        AltaConsultaForm instanciaFormConsulta = new AltaConsultaForm();
-                        instanciaFormConsulta.Show();
+                        MenuVeterinarioForm instanciaFormVet = new MenuVeterinarioForm();
+                        instanciaFormVet.Show();
                         this.Hide();
 
                         break;
                     case TipoUsuario.administrador:
-                        AdministradorForm instanciaFormAdmin = new AdministradorForm();
+                        MenuAdministradorForm instanciaFormAdmin = new MenuAdministradorForm();
                         instanciaFormAdmin.Show();
                         this.Hide();
                         break;

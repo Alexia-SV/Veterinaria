@@ -22,7 +22,7 @@ namespace Veterinaria.Clases
             Diagnostico = elDiagnostico;
             Tratamiento = elTratamiento;
             AltaConsulta = laAltaConsulta;
-
+            
         }
     }
 }
