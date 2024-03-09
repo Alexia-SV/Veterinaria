@@ -80,7 +80,12 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //1. obtener los datos que ingresan
+            Mascota mascota = (Mascota) comboBox1.SelectedItem;
+            //2. creo la nueva consulta con mis datos
+            //3. esa consulta se lo paso a mi metodo agregarConsulta
+            //4. Mandar un mesaje de que la consulta se registro de forma correcta
+            //5. Limpiar los controladores
         }
     }
 }
