@@ -11,7 +11,7 @@ namespace Veterinaria.Clases
     {
         //atributos 
         int DiasHospital { get; set; }
-        int NumeroCama { get; set; }
+        string NumeroCama { get; set; }
         //metodo constructor sin parametros 
         public Hospitalizacion() { }
         //metodo constructor con parametros 
@@ -22,7 +22,7 @@ namespace Veterinaria.Clases
             float elCostoInsumo,
             DateTime laFecha,
             int diasH, 
-            int numeroCama)
+            string numeroCama)
         {
             Mascota = laMascota;
             Veterinario = elVeterinario;

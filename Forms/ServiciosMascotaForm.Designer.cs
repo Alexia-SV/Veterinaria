@@ -39,48 +39,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 64);
+            this.label1.Location = new System.Drawing.Point(23, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre de la mascota";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(521, 112);
+            this.button1.Location = new System.Drawing.Point(423, 137);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 113);
+            this.button1.Size = new System.Drawing.Size(122, 85);
             this.button1.TabIndex = 1;
             this.button1.Text = "Buscar servicios";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(155, 148);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 89);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(334, 227);
             this.dataGridView1.TabIndex = 2;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(259, 61);
+            this.comboBox1.Location = new System.Drawing.Point(194, 50);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(133, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "Seleccione";
             // 
             // ServiciosMascotaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ServiciosMascotaForm";
             this.Text = "Servicios de mascota";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

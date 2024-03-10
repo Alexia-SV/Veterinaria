@@ -86,9 +86,13 @@ namespace VeterinariaS
             DateTime fechaConsulta = dateTimePicker1.Value;
             Usuario Veterinario = (Usuario)comboBox2.SelectedItem;
             float costoInsumos;
+            float costo = 0;
             
-            if (float.TryParse(textBox2.Text, out costoInsumos)) { } else{ }
-            float costo = costoInsumos + 300;
+            if (float.TryParse(textBox2.Text, out costoInsumos)) 
+            {
+                costo = costoInsumos + 300;
+            } else{ MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero");  }
+            
             
             string diagnostico = richTextBox1.Text;
             string tratamiento = richTextBox2.Text;
@@ -147,11 +151,17 @@ namespace VeterinariaS
         private void button2_Click(object sender, EventArgs e)
         {
             float costoInsumos;
+            float costo = 0;
 
-            if (float.TryParse(textBox2.Text, out costoInsumos)) { } else { }
-            float costoTotal = costoInsumos + 300;
+            if (float.TryParse(textBox2.Text, out costoInsumos))
+            {
+                costo = costoInsumos + 300;
+                label9.Text = "$ " + costo.ToString();
+            }
+            else { MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero"); }
 
-            MessageBox.Show("El costo total de la consulta es de $ " + costoTotal + " pesos");
+
+
         }
     }
 }

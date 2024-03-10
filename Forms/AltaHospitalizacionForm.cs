@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Clases;
 using Veterinaria.Enums;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VeterinariaS
 {
@@ -78,12 +79,29 @@ namespace VeterinariaS
         {
             Mascota mascota = (Mascota)comboBox1.SelectedItem;
             Usuario Veterinario = (Usuario)comboBox2.SelectedItem;
-            int DiasHospital = textBox2.Text.Length;
-            int NumeroCama = textBox2.Text.Length;
-            float CostoInsumos = textBox3.Text.Length;
-            float Costo = textBox4.Text.Length;
+            string DiasHospitalString = textBox2.Text;
+            string NumeroCama = textBox3.Text;
             DateTime fecha = dateTimePicker1.Value;
-            
+            float CostoInsumos;
+            float Costo = 0;
+
+            //conversion de string a int
+            //int DiasHospital = int.TryParse(DiasHospitalString, out DiasHospital) ? DiasHospital : 0;
+
+            // Intentar convertir el texto a un valor int
+            if (int.TryParse(DiasHospitalString, out int DiasHospital)){  }
+            else
+            {
+                MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero");
+            }
+
+
+            if (float.TryParse(textBox4.Text, out CostoInsumos))
+            {
+                Costo = CostoInsumos + 300;
+            }
+            else { MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero"); }
+
             //creo la nueva hospitalizacion con mis datos 
             Hospitalizacion nuevaHospitalizacion = new Hospitalizacion
                 (mascota, 
@@ -93,7 +111,9 @@ namespace VeterinariaS
                 fecha, 
                 DiasHospital, 
                 NumeroCama);
+
             instanciaVeterinariaC.registroHospitalizacion(nuevaHospitalizacion);
+            
 
             MessageBox.Show("Hospitalización registrada con exito");
         }
