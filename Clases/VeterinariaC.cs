@@ -22,18 +22,18 @@ namespace Veterinaria.Clases
 
         [JsonProperty]
         Mascota[] mascotas;
-        
+
         [JsonProperty]
         Dueno[] duenos;
-        
+
         [JsonProperty]
         Usuario[] usuarios;
 
         
 
         static string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
-        
-        
+
+
 
         // Estatica (no necesito que la clase este instanciada)
         //      new VeterinariaC() <--- Esto no es necesario
@@ -46,7 +46,7 @@ namespace Veterinaria.Clases
         //      instanciaC.miAtributo
 
         // Metodo constructor sin parametros 
-        public VeterinariaC() {}
+        public VeterinariaC() { }
 
         // Metodo constructor con parametros
         public VeterinariaC(
@@ -65,7 +65,7 @@ namespace Veterinaria.Clases
         }
 
         public static VeterinariaC obtenerVeterinaria()
-        {            
+        {
             try
             {
                 //2. Obtener el archivo serializado
@@ -89,7 +89,7 @@ namespace Veterinaria.Clases
 
                 //5. Retorno una la instancia que ya cree de VeterinariaC
                 return instanciaVeterinariaC;
-            }                 
+            }
         }
 
         // Hoy
@@ -147,13 +147,31 @@ namespace Veterinaria.Clases
             }
 
             Consulta[] nuevaConsulta = new Consulta[1] { consulta };
+
             Consulta[] combiArregloConsulta = this.consultas.Concat(nuevaConsulta).ToArray();
+
             consultas = combiArregloConsulta;
 
             this.guardarAtributosVeterinaria();
         }
 
-        
+        public void registroHospitalizacion(Hospitalizacion hospitalizacion)
+        {
+            if(this.hospitalizaciones == null)
+            {
+                this.hospitalizaciones = new Hospitalizacion[0];
+            }
+            Hospitalizacion[] nuevaHospitalizacion = new Hospitalizacion[1] { hospitalizacion };
+
+            Hospitalizacion[] combiArregloHospitalizacion = this.hospitalizaciones.Concat(nuevaHospitalizacion).ToArray();
+
+            hospitalizaciones = combiArregloHospitalizacion;
+
+            this.guardarAtributosVeterinaria();
+        }
+
+
+
         public void agregarMascota(Mascota mascota)
         {
             if (this.mascotas == null)
