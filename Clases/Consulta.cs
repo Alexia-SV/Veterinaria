@@ -13,16 +13,28 @@ namespace Veterinaria.Clases
         //atributos 
         string Diagnostico { get; set; }
         string Tratamiento { get; set; }
-        bool AltaConsulta { get; set; }
+        bool Hospitalizacion { get; set; }
         //metodo constructor sin parametros
         public Consulta() { }
         //metodo constructor
-        public Consulta(string elDiagnostico, string elTratamiento, bool laAltaConsulta)
+        public Consulta(
+            Mascota laMascota,
+            Usuario elVeterinario,
+            string elDiagnostico, 
+            string elTratamiento, 
+            bool laHospitalizacion, 
+            float elCosto, 
+            float elCostoInsumo, 
+            DateTime laFecha)
         {
+            Mascota = laMascota;
+            Veterinario = elVeterinario;
             Diagnostico = elDiagnostico;
             Tratamiento = elTratamiento;
-            AltaConsulta = laAltaConsulta;
-            
+            Hospitalizacion = laHospitalizacion;
+            Costo = elCosto;
+            CostoInsumo = elCostoInsumo;
+            Fecha = laFecha;
         }
     }
 }

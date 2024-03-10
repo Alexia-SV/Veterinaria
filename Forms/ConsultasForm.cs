@@ -45,5 +45,19 @@ namespace VeterinariaS.Forms
             AltaConsultaForm instanciaFormConsulta = new AltaConsultaForm();
             instanciaFormConsulta.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //1. Llamar al metodo obtenerVeterinaria
+            instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
+
+            //2. Traer todos las consultas de la instancia de Veterinaria C 
+            Consulta[] listaConsulta = instanciaVeterinariaC.obtenerConsultas();
+
+            //3. Asigna el arreglo de propietarios al DataGridView
+            dataGridView1.DataSource = listaConsulta;
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.Refresh();
+        }
     }
 }

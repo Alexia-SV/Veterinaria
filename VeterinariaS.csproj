@@ -61,12 +61,11 @@
     <Compile Include="Forms\AltaDuenoForm.Designer.cs">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
     </Compile>
-    
-    <Compile Include="AltaHospitalizacionForm1.cs">
+    <Compile Include="Forms\AltaHospitalizacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaHospitalizacionForm1.Designer.cs">
-      <DependentUpon>AltaHospitalizacionForm1.cs</DependentUpon>
+    <Compile Include="Forms\AltaHospitalizacionForm.Designer.cs">
+      <DependentUpon>AltaHospitalizacionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AltaMascotaForm.cs">
       <SubType>Form</SubType>
@@ -157,9 +156,8 @@
     <EmbeddedResource Include="Forms\AltaDuenoForm.resx">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
     </EmbeddedResource>
-    
-    <EmbeddedResource Include="AltaHospitalizacionForm1.resx">
-      <DependentUpon>AltaHospitalizacionForm1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AltaHospitalizacionForm.resx">
+      <DependentUpon>AltaHospitalizacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AltaMascotaForm.resx">
       <DependentUpon>AltaMascotaForm.cs</DependentUpon>

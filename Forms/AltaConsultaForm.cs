@@ -103,7 +103,15 @@ namespace VeterinariaS
             }
 
             //2. creo la nueva consulta con mis datos
-            Consulta nuevaConsulta = new Consulta(diagnostico, tratamiento, hospitalizacion);
+            Consulta nuevaConsulta = new Consulta
+                (mascota, 
+                Veterinario, 
+                diagnostico, 
+                tratamiento, 
+                hospitalizacion, 
+                costo, 
+                costoInsumos, 
+                fechaConsulta);
 
             //3. esa consulta se lo paso a mi metodo agregarConsulta
             instanciaVeterinariaC.agregarConsulta(nuevaConsulta);
@@ -111,7 +119,8 @@ namespace VeterinariaS
             //Si el radioButton 1 esta selelccionado entonces voy a abrir el formulario de hospitalizacion 
             if (radioButton1.Checked == true)
             {
-                //el form de Alta hospitalizacion 
+                AltaHospitalizacionForm instancia = new AltaHospitalizacionForm();
+                instancia.Show();
 
             }
             //Si el radioButton 1 no esta seleccionado o el radioButton 2 esta seleccionado entonces no hace nada
@@ -119,14 +128,14 @@ namespace VeterinariaS
             //4. Mandar un mesaje de que la consulta se registro de forma correcta
             MessageBox.Show("Consulta registrada");
             //5. Limpiar los controladores
-            comboBox1 = null;
+            /*comboBox1 = null;
             dateTimePicker1 = null;
             comboBox2 = null;
             textBox2.Text = " " ;
             richTextBox1.Text = " " ;
             richTextBox2.Text = " " ;
             radioButton1.Checked = false;
-            radioButton2.Checked = false;
+            radioButton2.Checked = false;*/
 
         }
 

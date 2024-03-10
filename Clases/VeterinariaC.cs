@@ -113,10 +113,10 @@ namespace Veterinaria.Clases
         // [ ] En el form de Admin hacer la funcion de servicios mascota
         // [ ] En el form de Admin hacer la funcion de ingresos mensuales
         // [ ] En el form de Admin hacer la funcion de ingresos anuales
-        // [ ] En el form de Alta consulta hacer que el boton calcular costo total funcione 
-        // [ ] En el form de Alta consulta que funcione la parte de la hospitalizacion 
-        // [ ] En el form de Alta consulta arreglar la linea 86 que es que se seleccione al veterinario en el evento click
-        // [ ] En el form de Menu Asistente hacer la funcion de hospitalizacion 
+        // [x] En el form de Alta consulta hacer que el boton calcular costo total funcione 
+        // [x] En el form de Alta consulta que funcione la parte de la hospitalizacion 
+        // [x] En el form de Alta consulta arreglar la linea 86 que es que se seleccione al veterinario en el evento click
+        // [x] En el form de Menu Asistente hacer la funcion de hospitalizacion 
         // [ ] En el form de Hospitalizacion checar si se pueden ordenar por fecha 
 
         public Servicio[] obtenerServicios()
@@ -247,6 +247,11 @@ namespace Veterinaria.Clases
         public Consulta[] obtenerConsultas()
         {
             return this.consultas;
+        }
+
+        public Hospitalizacion[] obtenerHospitalizaciones()
+        {
+            return this.hospitalizaciones;
         }
 
         /// <summary>

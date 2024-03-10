@@ -62,12 +62,11 @@ namespace VeterinariaS.Forms
             }
 
             //2. Obtengo todos los servicios
-            //Servicio[ ] listaServicios = instanciaVeterinariaC.obtenerServicios();
+            Servicio[ ] listaServicios = instanciaVeterinariaC.obtenerServicios();
 
             //3. Filtro los servicios dependiendo del vet
-            //por cada 
-            //foreach ( )
-            //Servicio[ ] serviciosNombreVeterinario = listaServicios 
+            // por cada veterinario dentro de la lista de servicios 
+            //
             //4. Escribo en el dataGrid 
         }
     }

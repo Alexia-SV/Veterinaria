@@ -11,15 +11,15 @@ namespace Veterinaria.Clases
     public class Servicio
     {
         //atributos 
-        float Costo { get; set; }
-        float CostoInsumo { get; set; }
-        TipoUsuario Veterinario { get; set; }
-        Mascota Mascota { get; set; }
-        DateTime Fecha { get; set; }
+        public float Costo { get; set; }
+        public float CostoInsumo { get; set; }
+        public Usuario Veterinario { get; set; }
+        public Mascota Mascota { get; set; }
+        public DateTime Fecha { get; set; }
         //metodo constructor sin parametros
         public Servicio() { }
         //metodo constructor parametros 
-        public Servicio(float elCosto, float elCostoInsumo, TipoUsuario elVeterinario, Mascota laMascota, DateTime laFecha)
+        public Servicio(float elCosto, float elCostoInsumo, Usuario elVeterinario, Mascota laMascota, DateTime laFecha)
         {
             Costo = elCosto;
             CostoInsumo = elCostoInsumo;
