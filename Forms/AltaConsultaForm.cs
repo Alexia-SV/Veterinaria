@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Clases;
 using Veterinaria.Enums;
+using VeterinariaS.Forms;
 
 namespace VeterinariaS
 {
@@ -83,7 +84,7 @@ namespace VeterinariaS
             //1. obtener los datos que ingresan
             Mascota mascota = (Mascota) comboBox1.SelectedItem;
             DateTime fechaConsulta = dateTimePicker1.Value;
-            TipoUsuario Veterinario = (TipoUsuario)comboBox2.SelectedItem;
+            Usuario Veterinario = (Usuario)comboBox2.SelectedItem;
             float costoInsumos;
             
             if (float.TryParse(textBox2.Text, out costoInsumos)) { } else{ }
@@ -107,6 +108,14 @@ namespace VeterinariaS
             //3. esa consulta se lo paso a mi metodo agregarConsulta
             instanciaVeterinariaC.agregarConsulta(nuevaConsulta);
 
+            //Si el radioButton 1 esta selelccionado entonces voy a abrir el formulario de hospitalizacion 
+            if (radioButton1.Checked == true)
+            {
+                //el form de Alta hospitalizacion 
+
+            }
+            //Si el radioButton 1 no esta seleccionado o el radioButton 2 esta seleccionado entonces no hace nada
+
             //4. Mandar un mesaje de que la consulta se registro de forma correcta
             MessageBox.Show("Consulta registrada");
             //5. Limpiar los controladores
@@ -123,13 +132,17 @@ namespace VeterinariaS
 
         private void button2_Click(object sender, EventArgs e, float costo)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             float costoInsumos;
 
             if (float.TryParse(textBox2.Text, out costoInsumos)) { } else { }
             float costoTotal = costoInsumos + 300;
 
             MessageBox.Show("El costo total de la consulta es de $ " + costoTotal + " pesos");
-            
         }
     }
 }

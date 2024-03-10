@@ -44,36 +44,39 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 45);
+            this.label1.Location = new System.Drawing.Point(44, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mascota:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 96);
+            this.label2.Location = new System.Drawing.Point(44, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 16);
+            this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha de la Consulta";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 188);
+            this.label4.Location = new System.Drawing.Point(43, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 16);
+            this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Costo Insumos";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -81,35 +84,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 139);
+            this.label3.Location = new System.Drawing.Point(46, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 16);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Veterinario:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(494, 37);
+            this.label6.Location = new System.Drawing.Point(370, 30);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Diagnostico";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(494, 188);
+            this.label7.Location = new System.Drawing.Point(370, 153);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 16);
+            this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "Tramiento";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(607, 357);
+            this.button1.Location = new System.Drawing.Point(455, 290);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 54);
+            this.button1.Size = new System.Drawing.Size(68, 44);
             this.button1.TabIndex = 9;
             this.button1.Text = "Alta Consulta";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,35 +125,39 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(140, 37);
+            this.comboBox1.Location = new System.Drawing.Point(105, 30);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 10;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(164, 131);
+            this.comboBox2.Location = new System.Drawing.Point(123, 106);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.Size = new System.Drawing.Size(92, 21);
             this.comboBox2.TabIndex = 12;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(57, 404);
+            this.label8.Location = new System.Drawing.Point(43, 328);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.Size = new System.Drawing.Size(78, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Hospitalización";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(186, 407);
+            this.radioButton1.Location = new System.Drawing.Point(140, 331);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(37, 20);
+            this.radioButton1.Size = new System.Drawing.Size(34, 17);
             this.radioButton1.TabIndex = 15;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Si";
@@ -155,9 +166,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(245, 406);
+            this.radioButton2.Location = new System.Drawing.Point(184, 330);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 20);
+            this.radioButton2.Size = new System.Drawing.Size(39, 17);
             this.radioButton2.TabIndex = 16;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "No";
@@ -165,52 +177,58 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(164, 182);
+            this.textBox2.Location = new System.Drawing.Point(123, 148);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 22);
+            this.textBox2.Size = new System.Drawing.Size(92, 20);
             this.textBox2.TabIndex = 17;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(492, 69);
+            this.richTextBox1.Location = new System.Drawing.Point(369, 56);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(205, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(155, 79);
             this.richTextBox1.TabIndex = 19;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(492, 222);
+            this.richTextBox2.Location = new System.Drawing.Point(369, 180);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(205, 96);
+            this.richTextBox2.Size = new System.Drawing.Size(155, 79);
             this.richTextBox2.TabIndex = 20;
             this.richTextBox2.Text = "";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(148, 74);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePicker1.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(381, 290);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 44);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Calcular costo total";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(Veterinaria.Clases.Usuario);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(197, 91);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(220, 22);
-            this.dateTimePicker1.TabIndex = 21;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(508, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 54);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Calcular costo total";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // AltaConsultaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.richTextBox2);
@@ -228,6 +246,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AltaConsultaForm";
             this.Text = "AltaConsultaForm";
             this.Load += new System.EventHandler(this.AltaConsultaForm_Load);

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Veterinaria.Clases;
 using System.IO;
 using System.Drawing;
+using VeterinariaS.Forms;
 
 namespace Veterinaria.Clases
 {
@@ -27,6 +28,8 @@ namespace Veterinaria.Clases
         
         [JsonProperty]
         Usuario[] usuarios;
+
+        
 
         static string rutaArchivo = @"VeterinariaC/RegistroVeterinaria.json";
         
@@ -103,8 +106,39 @@ namespace Veterinaria.Clases
         // [x] En el form de administrador necesito que agregue un usuario ---> instancia de agregar usuario
         // y que cuando se cree un veterinario o un asistente el tipo de usuario debe de cambiar segun le corresponda
         // [ ] Hacer un metodo para que lo que tengo en evento clic del boton sea entendible
-        // [ ] Hacer le menu para el tipo de acceso de asistente 
+        // [x] Hacer le menu para el tipo de acceso de asistente 
 
+        // Hoy
+        // [ ] En el form de Admin hacer la funcion de servicios veterinario 
+        // [ ] En el form de Admin hacer la funcion de servicios mascota
+        // [ ] En el form de Admin hacer la funcion de ingresos mensuales
+        // [ ] En el form de Admin hacer la funcion de ingresos anuales
+        // [ ] En el form de Alta consulta hacer que el boton calcular costo total funcione 
+        // [ ] En el form de Alta consulta que funcione la parte de la hospitalizacion 
+        // [ ] En el form de Alta consulta arreglar la linea 86 que es que se seleccione al veterinario en el evento click
+        // [ ] En el form de Menu Asistente hacer la funcion de hospitalizacion 
+        // [ ] En el form de Hospitalizacion checar si se pueden ordenar por fecha 
+
+        public Servicio[] obtenerServicios()
+        {
+            //1. obtener las consultas
+            if (this.consultas == null)
+            {
+                this.consultas = new Consulta[0];
+            }
+
+            //1.1 Hospitalizaciones
+            if (this.hospitalizaciones == null)
+            {
+                this.hospitalizaciones = new Hospitalizacion[0];
+            }
+
+            //1.1 hospitalizaciones 
+            //2. conbinarlas en un solo arreglo 
+            Servicio[] servicios = this.consultas.Cast<Servicio>().Concat(this.hospitalizaciones.Cast<Servicio>()).ToArray();
+            //3. retornarlas 
+            return servicios;
+        }
         public void agregarConsulta(Consulta consulta)
         {
             if (this.consultas == null)
