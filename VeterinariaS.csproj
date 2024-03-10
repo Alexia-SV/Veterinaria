@@ -61,6 +61,12 @@
     <Compile Include="AltaDuenoForm.Designer.cs">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AltaHospitalizacionForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaHospitalizacionForm1.Designer.cs">
+      <DependentUpon>AltaHospitalizacionForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="AltaMascotaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaDuenoForm.resx">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaHospitalizacionForm1.resx">
+      <DependentUpon>AltaHospitalizacionForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AltaMascotaForm.resx">
       <DependentUpon>AltaMascotaForm.cs</DependentUpon>
