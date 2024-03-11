@@ -132,14 +132,16 @@ namespace VeterinariaS
             //4. Mandar un mesaje de que la consulta se registro de forma correcta
             MessageBox.Show("Consulta registrada");
             //5. Limpiar los controladores
-            /*comboBox1 = null;
+            comboBox1 = null;
             dateTimePicker1 = null;
             comboBox2 = null;
             textBox2.Text = " " ;
             richTextBox1.Text = " " ;
             richTextBox2.Text = " " ;
             radioButton1.Checked = false;
-            radioButton2.Checked = false;*/
+            radioButton2.Checked = false;
+
+            this.Hide();
 
         }
 
