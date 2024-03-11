@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterinariaS.Forms;
 
 namespace VeterinariaS
 {
@@ -18,6 +19,7 @@ namespace VeterinariaS
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new InicioDeSesionForm());
             
+
         }
     }
 }

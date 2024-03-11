@@ -19,7 +19,6 @@ namespace VeterinariaS.Forms
         public ServiciosMascotaForm()
         {
             InitializeComponent();
-            InitializeComponent();
             //Llamar al metodo obtenerVeterinaria
             instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
 
@@ -39,24 +38,40 @@ namespace VeterinariaS.Forms
             //1. Obtengo lo que selecciono el usuario 
             //1.1 Obtener el elemento seleccionado como objeto
             object itemSeleccionado = comboBox1.SelectedItem;
+            string valorSeleccionado;
 
             if (itemSeleccionado != null)
             {
                 //1.2 Realizar acciones con el elemento seleccionado
-                string valorSeleccionado = itemSeleccionado.ToString();
+                valorSeleccionado = itemSeleccionado.ToString();
             }
             else
             {
                 //1.2 No hay ningún elemento seleccionado
                 MessageBox.Show("Ningún elemento seleccionado, por favor seleccione uno");
+                return;
             }
 
             //2. Obtengo todos los servicios
-            Mascota[] listaMascotas = instanciaVeterinariaC.obtenerMascotas();
+            Servicio[] listaServicios = instanciaVeterinariaC.obtenerServicios();
+            
+
+            List<Servicio> serviciosMascota = new List<Servicio>();
+            
             //3. Filtro los servicios dependiendo de la mascota
-            // por cada mascota dentro de la lista de mascotas 
-            //
-            //4. Escribo en el dataGrid 
+            foreach (Servicio servicio in listaServicios)
+            {
+                //3.1 compara el nombre de la mascota con valorSeleccionado
+                if(servicio.Mascota.Nombre == valorSeleccionado)
+                {
+                    serviciosMascota.Add(servicio);  
+                }
+            }
+
+            // 4. Pasar esos datos a mi dataGrid
+            dataGridView1.DataSource = serviciosMascota;
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.Refresh();
         }
     }
 }

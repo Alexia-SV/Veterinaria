@@ -51,6 +51,10 @@ namespace VeterinariaS
 
             //4. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Mascota registrada con exito");
+
+            textBox1.Text = " ";
+            comboBox1.SelectedItem = null;
+            comboBox2.SelectedItem = null;
         }
 
         private void AltaMascotaForm_Load(object sender, EventArgs e)

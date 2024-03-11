@@ -22,7 +22,8 @@ namespace Veterinaria.Clases
             float elCostoInsumo,
             DateTime laFecha,
             int diasH, 
-            string numeroCama)
+            string numeroCama
+            )
         {
             Mascota = laMascota;
             Veterinario = elVeterinario;
@@ -31,6 +32,7 @@ namespace Veterinaria.Clases
             DiasHospital = diasH;
             NumeroCama = numeroCama;
             Fecha = laFecha;
+            TipoServicio = "Hospitalización";
         }
 
     }

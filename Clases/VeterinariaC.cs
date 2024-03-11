@@ -111,7 +111,7 @@ namespace Veterinaria.Clases
         // Hoy
         // [ ] En el form de Admin hacer la funcion de servicios veterinario 
         // [ ] En el form de Admin hacer la funcion de servicios mascota
-        // [ ] En el form de Admin hacer la funcion de ingresos mensuales
+        // [x] En el form de Admin hacer la funcion de ingresos mensuales
         // [ ] En el form de Admin hacer la funcion de ingresos anuales
         // [x] En el form de Alta consulta hacer que el boton calcular costo total funcione 
         // [x] En el form de Alta consulta que funcione la parte de la hospitalizacion 
@@ -170,7 +170,7 @@ namespace Veterinaria.Clases
             this.guardarAtributosVeterinaria();
         }
 
-
+        
 
         public void agregarMascota(Mascota mascota)
         {

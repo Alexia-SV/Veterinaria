@@ -18,6 +18,11 @@ namespace Veterinaria.Clases
             Direccion = laDireccion;
             Telefono = elTelefono;
         }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }
 

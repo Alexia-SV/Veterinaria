@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MascotaForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DuenoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,6 +38,8 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mascotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mascotaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -57,46 +56,31 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
-            this.Especie,
-            this.DuenoNombre});
-            this.dataGridView1.Location = new System.Drawing.Point(58, 88);
+            this.Especie});
+            this.dataGridView1.Location = new System.Drawing.Point(44, 72);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(523, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(392, 160);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Especie
-            // 
-            this.Especie.DataPropertyName = "Especie";
-            this.Especie.HeaderText = "Especie";
-            this.Especie.Name = "Especie";
-            // 
-            // DuenoNombre
-            // 
-            this.DuenoNombre.DataPropertyName = "NombreDueno";
-            this.DuenoNombre.HeaderText = "Propietario";
-            this.DuenoNombre.Name = "DuenoNombre";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 59);
+            this.label1.Location = new System.Drawing.Point(41, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 16);
+            this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mascotas registradas";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(418, 38);
+            this.button1.Location = new System.Drawing.Point(314, 31);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 37);
+            this.button1.Size = new System.Drawing.Size(122, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Agregar mascota";
             this.button1.UseVisualStyleBackColor = true;
@@ -104,9 +88,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(58, 302);
+            this.button2.Location = new System.Drawing.Point(44, 245);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 31);
+            this.button2.Size = new System.Drawing.Size(116, 25);
             this.button2.TabIndex = 3;
             this.button2.Text = "Refrescar listado";
             this.button2.UseVisualStyleBackColor = true;
@@ -137,16 +122,29 @@
             // 
             this.mascotaBindingSource.DataSource = typeof(Veterinaria.Clases.Mascota);
             // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Especie
+            // 
+            this.Especie.DataPropertyName = "Especie";
+            this.Especie.HeaderText = "Especie";
+            this.Especie.Name = "Especie";
+            // 
             // MascotaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 380);
+            this.ClientSize = new System.Drawing.Size(487, 309);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MascotaForm";
             this.Text = "Mascotas";
             this.Load += new System.EventHandler(this.MascotaForm_Load);
@@ -171,6 +169,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Especie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DuenoNombre;
     }
 }

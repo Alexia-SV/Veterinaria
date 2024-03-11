@@ -24,6 +24,12 @@ namespace Veterinaria.Clases
             TipoUsuario = elTipoUsuario;
             Contrasena = laContrasena;
         }
+
+        //Metodo ToString sobreescrito 
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 
 

@@ -25,7 +25,8 @@ namespace Veterinaria.Clases
             bool laHospitalizacion, 
             float elCosto, 
             float elCostoInsumo, 
-            DateTime laFecha)
+            DateTime laFecha
+            )
         {
             Mascota = laMascota;
             Veterinario = elVeterinario;
@@ -35,6 +36,7 @@ namespace Veterinaria.Clases
             Costo = elCosto;
             CostoInsumo = elCostoInsumo;
             Fecha = laFecha;
+            TipoServicio = "Consulta";
         }
     }
 }
