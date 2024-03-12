@@ -73,6 +73,7 @@ namespace VeterinariaS.Forms
             foreach (Servicio servicio in listaServicios)
             {
                 // 3.2. Comparar el nombre del veterinario (servicio.vet.nombre) con valorSeleccionado    
+                //error en que cuando selecciona al veterinario y busca los servicios lo rompe
                 if (servicio.Veterinario.Nombre == valorSeleccionado)
                 {
                     // 3.3. Si son iguales:

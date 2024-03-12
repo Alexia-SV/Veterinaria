@@ -63,7 +63,7 @@ namespace Veterinaria.Clases
             duenos = losDuenos;
             usuarios = losUsuarios;
         }
-
+        // visibilidad        static/no statico           retorna           nombre           propiedades
         public static VeterinariaC obtenerVeterinaria()
         {
             try

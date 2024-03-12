@@ -90,6 +90,7 @@ namespace VeterinariaS
             textBox2.Text = " ";
         }
 
+        //visibilidad  estatico/no estatico   retorna    nombre    propiedades 
         private Usuario iniciarSesion(string Nombre, string Contrasena)
         {
             //1.Extraigo toda lista de usuarios de VeterinariaC 

@@ -31,6 +31,9 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //0.1 Validar que el textbox 1 no sea nulo
+            //0.2 Validar que el textbox 2 no sea nulo
+            //0.3 Validar que el comboBox no tenga el valor por defecto
             //1. obtener los datos que ingresan
             string nombre = textBox1.Text;
             string tipoUsuario = comboBox1.SelectedItem.ToString();
@@ -64,6 +67,49 @@ namespace VeterinariaS
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+                           
+        private string[] ValidarDatos()
+        {
+            //normalmente usar else es una mala practica y normalmente
+            //todo el codigo que usa else se puede refactorizar/cambiar para que no use el else 
+
+            //1.verificar que texbox1 no sea nulo
+            if (textBox1 == null)
+            {
+                //1.1 si texbox1 no es nulo entonces sigo
+                //1.2 si texbox1 es nulo entonces me retorna nulo
+                return null;
+            }
+
+            //2.verificar que texbox2 no sea nulo
+            if (textBox2 == null)
+            {
+                //2.1 si texbox2 no es nulo entonces sig
+                //2.2 si texbox2 es nulo entonces me retorna nulo
+                return null;
+            }
+            
+                
+
+            //3.verificar que el combox1 no este seleccionado el valor por default
+            if (comboBox1 == null)
+            {
+                //3.1 si el combox1 no esta seleccionado el valor por default entonces sigo
+                //3.2 si el combox1 esta seleccionado el valor por default entonces retorno nulo
+                return null;
+            }
+
+
+            //4. retorno los datos validados en una lista de tipo cadena de tamaño 3
+            List<string> datosValidos = new List<string>();
+
+            //4.1 Pasarle los datos
+            datosValidos.Add(textBox1.Text);
+            datosValidos.Add(textBox2.Text);
+            datosValidos.Add(comboBox1.SelectedItem.ToString());
+             return datosValidos.ToArray();
         }
     }
 }
