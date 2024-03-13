@@ -23,6 +23,13 @@ namespace VeterinariaS
             instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
             //1. Traer todos los dueños de la instancia de Veterinaria C 
             Dueno[] listaDuenos = instanciaVeterinariaC.obtenerDuenos();
+            
+            // validar que en la listaDuenos no sea nula
+            if (listaDuenos == null)
+            {
+                return;
+            }
+
             //1.1 El comboBox1 va a usar la propiedad de Nombre dentro del dueno
             comboBox1.DisplayMember = "Nombre";
             //2. Filtro que por cada dueno 
@@ -34,9 +41,17 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nombre = textBox1.Text;
-            Dueno dueno = (Dueno)comboBox1.SelectedItem;
-            string especie = comboBox2.SelectedItem.ToString();
+            Dictionary<string, object> datosValidos = ValidarDatos();
+            if(datosValidos == null)
+            {
+                MessageBox.Show("No ingreso ningun dato");
+                return;
+            }
+
+
+            string nombre = datosValidos["Nombre"].ToString();
+            Dueno dueno = (Dueno)datosValidos["Dueno"];
+            string especie = datosValidos["Especie"].ToString();
 
             
             //1.2 convertir la cadena que obtengo en especia en un Enum para poder trabajarlo
@@ -52,7 +67,7 @@ namespace VeterinariaS
             //4. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Mascota registrada con exito");
 
-            textBox1.Text = " ";
+            textBox1.Text = "";
             comboBox1.SelectedItem = null;
             comboBox2.SelectedItem = null;
         }
@@ -64,6 +79,36 @@ namespace VeterinariaS
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        //metodo para validar datos 
+        private Dictionary<string, object> ValidarDatos()
+        {
+            if(textBox1.Text == null || textBox1.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (comboBox1.SelectedItem == null)
+            {
+                return null;
+            }
+
+            if(comboBox2.SelectedItem == null)
+            {
+                return null;
+            }
+
+            //4. retorno los datos validados en un diccionario/tipo lista
+            Dictionary<string, object> datosValidos = new Dictionary<string, object>();
+
+            //5. Pasarle los datos a mi diccionario 
+            datosValidos.Add("Nombre", textBox1.Text);
+            datosValidos.Add("Dueno", (Dueno)comboBox1.SelectedItem);
+            datosValidos.Add("Especie", comboBox2.SelectedItem.ToString());
+
+            return datosValidos;
 
         }
     }

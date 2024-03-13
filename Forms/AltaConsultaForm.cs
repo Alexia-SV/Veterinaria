@@ -43,6 +43,12 @@ namespace VeterinariaS
             //4. Traer todas las macotas de la instancia de Veterinaria C
             Mascota[ ] listaMascotas = instanciaVeterinariaC.obtenerMascotas();
 
+            //Validar que listaMascotas no sea nula
+            if (listaMascotas == null)
+            {
+                return;
+            }
+
             //4.1 El comboBox va a usar la propiedad de Nombre dentro de la mascota
             comboBox1.DisplayMember = "Nombre";
 
@@ -52,6 +58,7 @@ namespace VeterinariaS
                 //6. Escribirla en el comboBox
                 comboBox1.Items.Add(mascota);
             }
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -81,68 +88,41 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //1. obtener los datos que ingresan
-            Mascota mascota = (Mascota) comboBox1.SelectedItem;
-            DateTime fechaConsulta = dateTimePicker1.Value;
-            Usuario Veterinario = (Usuario)comboBox2.SelectedItem;
-            float costoInsumos;
-            float costo = 0;
-            
-            if (float.TryParse(textBox2.Text, out costoInsumos)) 
+            Dictionary<string, object> datosValidos = ValidarDatos();
+            if (datosValidos == null)
             {
-                costo = costoInsumos + 300;
-            } else{ MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero");  }
-            
-            
-            string diagnostico = richTextBox1.Text;
-            string tratamiento = richTextBox2.Text;
-            bool hospitalizacion;
-            
-            if (radioButton1.Checked)
-            {
-                hospitalizacion = true;
-            } else
-            {
-                hospitalizacion = false;
+                MessageBox.Show("No ingreso ningun dato");
+                return;
             }
+
+            //1. obtener los datos que ingresan
+            Mascota mascota = (Mascota)datosValidos["Mascota"];
+            DateTime fechaConsulta = dateTimePicker1.Value;
+            Usuario Veterinario = (Usuario)datosValidos["Veterinario"];
+            float costo = 300;
 
             //2. creo la nueva consulta con mis datos
             Consulta nuevaConsulta = new Consulta
                 (mascota, 
-                Veterinario, 
-                diagnostico, 
-                tratamiento, 
-                hospitalizacion, 
-                costo, 
-                costoInsumos, 
-                fechaConsulta);
+                Veterinario,
+                "",
+                "",
+                false,
+                costo,
+                0,
+                fechaConsulta
+                );
 
             //3. esa consulta se lo paso a mi metodo agregarConsulta
             instanciaVeterinariaC.agregarConsulta(nuevaConsulta);
 
-            //Si el radioButton 1 esta selelccionado entonces voy a abrir el formulario de hospitalizacion 
-            if (radioButton1.Checked == true)
-            {
-                AltaHospitalizacionForm instancia = new AltaHospitalizacionForm();
-                instancia.Show();
-
-            }
-            //Si el radioButton 1 no esta seleccionado o el radioButton 2 esta seleccionado entonces no hace nada
-
             //4. Mandar un mesaje de que la consulta se registro de forma correcta
             MessageBox.Show("Consulta registrada");
+
             //5. Limpiar los controladores
             comboBox1 = null;
             dateTimePicker1 = null;
             comboBox2 = null;
-            textBox2.Text = " " ;
-            richTextBox1.Text = " " ;
-            richTextBox2.Text = " " ;
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-
-            this.Hide();
-
         }
 
         private void button2_Click(object sender, EventArgs e, float costo)
@@ -152,17 +132,33 @@ namespace VeterinariaS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            float costoInsumos;
-            float costo = 0;
+            
 
-            if (float.TryParse(textBox2.Text, out costoInsumos))
+
+        }
+
+        //Validar datos 
+        private Dictionary<string, object> ValidarDatos()
+        {
+            if (comboBox1.SelectedItem == null)
             {
-                costo = costoInsumos + 300;
-                label9.Text = "$ " + costo.ToString();
+                return null;
             }
-            else { MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero"); }
+
+            if(comboBox2.SelectedItem == null)
+            {
+                return null;
+            }
 
 
+            //4. retorno los datos validados en un diccionario/tipo lista
+            Dictionary<string, object> datosValidos = new Dictionary<string, object>();
+            //datosValidos.Add("Dueno", (Dueno)comboBox1.SelectedItem);
+
+            datosValidos.Add("Mascota", (Mascota)comboBox1.SelectedItem);
+            datosValidos.Add("Veterinario", (Usuario)comboBox2.SelectedItem);
+
+            return datosValidos;
 
         }
     }

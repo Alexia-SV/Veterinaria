@@ -143,6 +143,12 @@
     <Compile Include="Forms\MenuVeterinarioForm.Designer.cs">
       <DependentUpon>MenuVeterinarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModificarCnsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModificarCnsultaForm.Designer.cs">
+      <DependentUpon>ModificarCnsultaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiciosMascotaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuVeterinarioForm.resx">
       <DependentUpon>MenuVeterinarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModificarCnsultaForm.resx">
+      <DependentUpon>ModificarCnsultaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ServiciosMascotaForm.resx">
       <DependentUpon>ServiciosMascotaForm.cs</DependentUpon>

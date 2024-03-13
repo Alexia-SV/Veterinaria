@@ -30,30 +30,38 @@ namespace VeterinariaS
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            //0.1 Validar que el textbox 1 no sea nulo
-            //0.2 Validar que el textbox 2 no sea nulo
-            //0.3 Validar que el comboBox no tenga el valor por defecto
-            //1. obtener los datos que ingresan
-            string nombre = textBox1.Text;
-            string tipoUsuario = comboBox1.SelectedItem.ToString();
-            string contrasena = textBox2.Text;
+        {   
+            // 1. Lo que me retorna ValidarDatos() lo guardo en algun lugar
+            Dictionary<string, string> datosValidos = ValidarDatos();
+            
+            // 2. Si datosValido es nulo 
+            if (datosValidos == null)
+            {
+                // 2.1 entonces no sigue
+                MessageBox.Show("No ingreso ningun dato");
+                return;
+            }
 
-            //1.2 convertir la cadena que obtengo en tipoUsuario en un Enum para poder trabajarlo
+            // 3. Obtener los datos que ingresan
+            string nombre = datosValidos["Nombre"];
+            string tipoUsuario = datosValidos["TipoUsuario"];
+            string contrasena = datosValidos["Contraseña"];
+
+            // 3.1 Convertir la cadena que obtengo en tipoUsuario en un Enum para poder trabajarlo
             TipoUsuario tipoUsuarioEnum = (TipoUsuario)Enum.Parse(typeof(TipoUsuario), tipoUsuario);
             
-            //2. creo el nuevo usuario con mis datos 
+            // 4. Creo el nuevo usuario con mis datos 
             Usuario nuevoUsuario = new Usuario(nombre, tipoUsuarioEnum, contrasena);
 
-            //3. ese usuario se lo paso a mi metodo agregarUsuario
+            // 5. Ese usuario se lo paso a mi metodo agregarUsuario
             instanciaVeterinariaC.agregarUsuario(nuevoUsuario);
 
-            //4. Mandar un mesaje de que el usuario se registro de forma correcta 
+            // 6. Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Usuario registrado de forma correcta");
 
-            //5. Limpiar los controladores 
-            textBox1.Text = " ";
-            textBox2.Text = " ";
+            // 7. Limpiar los controladores 
+            textBox1.Text = "";
+            textBox2.Text = "";
             comboBox1.SelectedItem = null;
         }
 
@@ -70,46 +78,42 @@ namespace VeterinariaS
         }
 
                            
-        private string[] ValidarDatos()
+        private Dictionary<string, string> ValidarDatos()
         {
-            //normalmente usar else es una mala practica y normalmente
-            //todo el codigo que usa else se puede refactorizar/cambiar para que no use el else 
-
-            //1.verificar que texbox1 no sea nulo
-            if (textBox1 == null)
+            // 1. Verificar que texbox1 no sea nulo o sea un string vacio
+            if (textBox1.Text == null || textBox1.Text.Trim() == "")
             {
-                //1.1 si texbox1 no es nulo entonces sigo
-                //1.2 si texbox1 es nulo entonces me retorna nulo
+                // 1.1 si texbox1 es nulo entonces me retorna nulo
                 return null;
             }
 
-            //2.verificar que texbox2 no sea nulo
-            if (textBox2 == null)
+            // 2. Verificar que texbox2 no sea nulo o sea un string vacio
+            if (textBox2.Text == null || textBox2.Text.Trim() == "")
             {
-                //2.1 si texbox2 no es nulo entonces sig
-                //2.2 si texbox2 es nulo entonces me retorna nulo
+                // 2.1 si texbox2 es nulo entonces me retorna nulo
                 return null;
             }
             
-                
 
-            //3.verificar que el combox1 no este seleccionado el valor por default
-            if (comboBox1 == null)
+            // 3. Verificar que el combox1 no este seleccionado el valor por default
+            if (comboBox1.SelectedItem == null)
             {
-                //3.1 si el combox1 no esta seleccionado el valor por default entonces sigo
-                //3.2 si el combox1 esta seleccionado el valor por default entonces retorno nulo
+                // 3.1 Si el combox1 esta seleccionado el valor por default entonces retorno nulo
                 return null;
             }
+            
+            // 4. Retorno los datos validados en un diccionario
+            Dictionary<string, string> datosValidos = new Dictionary<string, string>();
 
-
-            //4. retorno los datos validados en una lista de tipo cadena de tamaño 3
-            List<string> datosValidos = new List<string>();
-
-            //4.1 Pasarle los datos
-            datosValidos.Add(textBox1.Text);
-            datosValidos.Add(textBox2.Text);
-            datosValidos.Add(comboBox1.SelectedItem.ToString());
-             return datosValidos.ToArray();
+            // 5. Pasarle los datos
+            datosValidos.Add("Nombre", textBox1.Text);
+            datosValidos.Add("Contraseña", textBox2.Text);
+            datosValidos.Add("TipoUsuario", comboBox1.SelectedItem.ToString());
+            
+            return datosValidos;
         }
+
+        
+
     }
 }

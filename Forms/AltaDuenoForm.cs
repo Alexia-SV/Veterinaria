@@ -36,20 +36,56 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Nombre = textBox1.Text;
-            string Direccion = textBox2.Text;
-            string Telefono = textBox3.Text;
+            Dictionary<string, string> datosValidos = ValidarDatos();
+            if (datosValidos == null)
+            {
+                MessageBox.Show("No ingreso ningun dato");
+                return;
+            }
+
+            string Nombre = datosValidos["Nombre"];
+            string Direccion = datosValidos["Direccion"];
+            string Telefono = datosValidos["Telefono"];
 
             Dueno nuevoDueno = new Dueno (Nombre, Direccion, Telefono);
-            //3. ese usuario se lo paso a mi metodo agregarUsuario
+            // ese usuario se lo paso a mi metodo agregarUsuario
             instanciaVeterinariaC.agregarDueno(nuevoDueno);
 
-            //4. Mandar un mesaje de que el usuario se registro de forma correcta 
+            // Mandar un mesaje de que el usuario se registro de forma correcta 
             MessageBox.Show("Propietario fue registrado correctamente");
-            textBox1.Text = " ";
-            textBox2 .Text = " ";
-            textBox3 .Text = " ";
+            textBox1.Text = "";
+            textBox2 .Text = "";
+            textBox3 .Text = "";
 
+        }
+
+        //metodo para validar datos 
+        private Dictionary<string, string> ValidarDatos()
+        {
+            if(textBox1.Text == null || textBox1.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (textBox2.Text == null || textBox2.Text.Trim() == "" ) 
+            { 
+                return null; 
+            }
+
+            if(textBox3.Text == null || textBox3.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            //retorno un diccionario con los datos 
+            Dictionary<string, string> datosValidos = new Dictionary<string, string>();
+
+            //agrego datos al diccionario
+            datosValidos.Add("Nombre", textBox1 .Text);
+            datosValidos.Add("Direccion", textBox2.Text);
+            datosValidos.Add("Telefono", textBox3 .Text);
+            
+            return datosValidos;
         }
     }
 }

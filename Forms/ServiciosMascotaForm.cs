@@ -27,6 +27,10 @@ namespace VeterinariaS.Forms
             //1.1 El comboBox va a usar la propiedad de Nombre dentro del usuario
             comboBox1.DisplayMember = "Nombre";
             //2. Filtro que por cada usuario 
+            if (listaMascotas == null)
+            {
+                return;
+            }
             foreach (Mascota mascota in listaMascotas)
             {
                 comboBox1.Items.Add(mascota);
