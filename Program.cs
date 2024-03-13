@@ -18,7 +18,7 @@ namespace VeterinariaS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new InicioDeSesionForm());
-            Application.Run(new AltaConsultaForm());
+            Application.Run(new AltaDuenoForm());
 
 
         }

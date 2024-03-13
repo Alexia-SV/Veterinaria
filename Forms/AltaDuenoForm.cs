@@ -39,7 +39,11 @@ namespace VeterinariaS
             Dictionary<string, string> datosValidos = ValidarDatos();
             if (datosValidos == null)
             {
-                MessageBox.Show("No ingreso ningun dato");
+                MessageBox.Show("Los datos ingresados fueron incorrectos");
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+
                 return;
             }
 
