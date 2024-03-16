@@ -31,6 +31,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,17 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Consulta";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(194, 272);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 36);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Calcular costo total";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -120,7 +131,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(133, 282);
+            this.label9.Location = new System.Drawing.Point(125, 282);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 16);
@@ -193,17 +204,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Costo Insumos:";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(194, 272);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 36);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Calcular costo total";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(593, 163);
@@ -212,6 +212,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Registrar expediente";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ModificarCnsultaForm
             // 

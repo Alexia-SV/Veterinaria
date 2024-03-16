@@ -14,6 +14,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Linq.Expressions;
 using VeterinariaS.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VeterinariaS
 {
@@ -44,6 +45,16 @@ namespace VeterinariaS
         
         private void button1_Click(object sender, EventArgs e)
         {
+            Dictionary<string, string> datosValidos = ValidarDatos();
+            if (datosValidos == null)
+            {
+                MessageBox.Show("Los datos ingresados fueron incorrectos");
+                textBox1.Text = "";
+                textBox2.Text = "";
+
+                return;
+            }
+
             //1. Obtengo los datos que ingrese el usuario
             string usuario = textBox1.Text;
             string contrasena = textBox2.Text;
@@ -127,6 +138,30 @@ namespace VeterinariaS
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        //Validar datos 
+        private Dictionary<string, string> ValidarDatos()
+        {
+            if (textBox1.Text == null || textBox1.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (textBox2.Text == null || textBox2.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            //4. retorno los datos validados en un diccionario/tipo lista
+            Dictionary<string, string> datosValidos = new Dictionary<string, string>();
+            //datosValidos.Add("Dueno", (Dueno)comboBox1.SelectedItem);
+
+            datosValidos.Add("Nombre", textBox1.Text);
+            datosValidos.Add("Contrasena", textBox2.Text);
+
+            return datosValidos;
 
         }
     }
