@@ -130,13 +130,6 @@ namespace VeterinariaS
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
-
         //Validar datos 
         private Dictionary<string, object> ValidarDatos()
         {

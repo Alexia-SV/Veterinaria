@@ -62,15 +62,11 @@
     <Compile Include="Forms\AltaDuenoForm.Designer.cs">
       <DependentUpon>AltaDuenoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AltaHospitalizacionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\AltaHospitalizacionForm.cs" />
     <Compile Include="Forms\AltaHospitalizacionForm.Designer.cs">
       <DependentUpon>AltaHospitalizacionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AltaMascotaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\AltaMascotaForm.cs" />
     <Compile Include="Forms\AltaMascotaForm.Designer.cs">
       <DependentUpon>AltaMascotaForm.cs</DependentUpon>
     </Compile>
@@ -89,21 +85,15 @@
     <Compile Include="Forms\ConsultasForm.Designer.cs">
       <DependentUpon>ConsultasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HospitalizacionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\HospitalizacionForm.cs" />
     <Compile Include="Forms\HospitalizacionForm.Designer.cs">
       <DependentUpon>HospitalizacionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\IngresosAnualesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\IngresosAnualesForm.cs" />
     <Compile Include="Forms\IngresosAnualesForm.Designer.cs">
       <DependentUpon>IngresosAnualesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\IngresosMensualesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\IngresosMensualesForm.cs" />
     <Compile Include="Forms\IngresosMensualesForm.Designer.cs">
       <DependentUpon>IngresosMensualesForm.cs</DependentUpon>
     </Compile>
@@ -119,21 +109,15 @@
     <Compile Include="Forms\AltaUsuarioForm.Designer.cs">
       <DependentUpon>AltaUsuarioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MascotaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\MascotaForm.cs" />
     <Compile Include="Forms\MascotaForm.Designer.cs">
       <DependentUpon>MascotaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuAdministradorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\MenuAdministradorForm.cs" />
     <Compile Include="Forms\MenuAdministradorForm.Designer.cs">
       <DependentUpon>MenuAdministradorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MenuAsistenteForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\MenuAsistenteForm.cs" />
     <Compile Include="Forms\MenuAsistenteForm.Designer.cs">
       <DependentUpon>MenuAsistenteForm.cs</DependentUpon>
     </Compile>
@@ -149,9 +133,7 @@
     <Compile Include="Forms\ModificarCnsultaForm.Designer.cs">
       <DependentUpon>ModificarCnsultaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ServiciosMascotaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ServiciosMascotaForm.cs" />
     <Compile Include="Forms\ServiciosMascotaForm.Designer.cs">
       <DependentUpon>ServiciosMascotaForm.cs</DependentUpon>
     </Compile>
@@ -163,9 +145,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\PropietarioForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\PropietarioForm.cs" />
     <Compile Include="Forms\PropietarioForm.Designer.cs">
       <DependentUpon>PropietarioForm.cs</DependentUpon>
     </Compile>

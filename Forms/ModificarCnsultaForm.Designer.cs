@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,9 +44,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(593, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 77);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Registrar expediente";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -63,10 +73,10 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(26, 21);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(519, 362);
-            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Expediente de la consulta";
             // 
@@ -96,7 +106,6 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Calcular costo total";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // radioButton2
             // 
@@ -204,23 +213,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Costo Insumos:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(593, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 77);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Registrar expediente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ModificarCnsultaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 404);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(901, 484);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button1);
             this.Name = "ModificarCnsultaForm";
             this.Text = "Datos de consulta";
             this.groupBox2.ResumeLayout(false);
@@ -230,22 +229,21 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button1;
     }
 }

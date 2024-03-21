@@ -37,6 +37,7 @@ namespace VeterinariaS.Forms
                     comboBox1.Items.Add(usuario);
                 }
             }
+            
         }
 
         private void ServiciosVeterinarioForm_Load(object sender, EventArgs e)
@@ -122,6 +123,11 @@ namespace VeterinariaS.Forms
             //}
 
             //4. Escribo en el dataGrid 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
