@@ -19,13 +19,15 @@ namespace VeterinariaS.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ConsultasForm instancia = new ConsultasForm();
+            //ConsultasForm instancia = new ConsultasForm();
+            AltaConsultaForm instancia = new AltaConsultaForm();    
             instancia.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HospitalizacionForm instancia = new HospitalizacionForm();
+            //HospitalizacionForm instancia = new HospitalizacionForm();
+            AltaHospitalizacionForm instancia = new AltaHospitalizacionForm();
             instancia.Show();
         }
 

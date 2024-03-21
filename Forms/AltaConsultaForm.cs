@@ -92,26 +92,52 @@ namespace VeterinariaS
             if (datosValidos == null)
             {
                 MessageBox.Show("No ingreso ningun dato");
+                //Limpiar los controladores
+                comboBox1 = null;
+                dateTimePicker1 = null;
+                comboBox2 = null;
+                textBox2.Text = " ";
+                richTextBox1.Text = " ";
+                richTextBox2.Text = " ";
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
                 return;
             }
 
             //1. obtener los datos que ingresan
             Mascota mascota = (Mascota)datosValidos["Mascota"];
             DateTime fechaConsulta = dateTimePicker1.Value;
-            Usuario Veterinario = (Usuario)datosValidos["Veterinario"];
+            Usuario veterinario = (Usuario)datosValidos["Veterinario"];
             float costo = 300;
+            string diagnostico = (string)datosValidos["Diagnostico"];
+            string tratamiento = (string)datosValidos["Tratamiento"];
+            bool hospitalizacion;
+            float costoInsumos;
 
-            //2. creo la nueva consulta con mis datos
-            Consulta nuevaConsulta = new Consulta
-                (mascota, 
-                Veterinario,
-                "",
-                "",
-                false,
-                costo,
-                0,
-                fechaConsulta
-                );
+            if (float.TryParse((string)datosValidos["CostoInsumo"], out costoInsumos))
+            {
+                costo = costoInsumos + costo;
+            }
+            else { MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero"); }
+
+            if (radioButton1.Checked)
+            {
+                hospitalizacion = true;
+            }
+
+            hospitalizacion = false;
+
+
+                //2. creo la nueva consulta con mis datos
+                Consulta nuevaConsulta = new Consulta
+                    (mascota,
+                    veterinario, 
+                    diagnostico, 
+                    tratamiento, 
+                    hospitalizacion, 
+                    costo, 
+                    costoInsumos, 
+                    fechaConsulta);
 
             //3. esa consulta se lo paso a mi metodo agregarConsulta
             instanciaVeterinariaC.agregarConsulta(nuevaConsulta);
@@ -123,6 +149,12 @@ namespace VeterinariaS
             comboBox1 = null;
             dateTimePicker1 = null;
             comboBox2 = null;
+            textBox2.Text = " ";
+            richTextBox1.Text = " ";
+            richTextBox2.Text = " ";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            return;
         }
 
         private void button2_Click(object sender, EventArgs e, float costo)
@@ -143,6 +175,22 @@ namespace VeterinariaS
                 return null;
             }
 
+            if (richTextBox1.Text == null || richTextBox1.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (richTextBox2.Text == null || richTextBox2.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (textBox2.Text == null || textBox2.Text.Trim() == "")
+            {
+                return null;
+            }
+
+
 
             //4. retorno los datos validados en un diccionario/tipo lista
             Dictionary<string, object> datosValidos = new Dictionary<string, object>();
@@ -150,6 +198,9 @@ namespace VeterinariaS
 
             datosValidos.Add("Mascota", (Mascota)comboBox1.SelectedItem);
             datosValidos.Add("Veterinario", (Usuario)comboBox2.SelectedItem);
+            datosValidos.Add("Diagnostico", richTextBox1.Text);
+            datosValidos.Add("Tratamiento", richTextBox2.Text);
+            datosValidos.Add("CostoInsumo", textBox2.Text);
 
             return datosValidos;
 

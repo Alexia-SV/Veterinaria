@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Veterinaria.Clases;
 using Veterinaria.Enums;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace VeterinariaS
 {
@@ -43,6 +44,12 @@ namespace VeterinariaS
 
             //4. Traer todas las macotas de la instancia de Veterinaria C
             Mascota[] listaMascotas = instanciaVeterinariaC.obtenerMascotas();
+            
+            //Validar que listaMascotas no sea nula
+            if (listaMascotas == null)
+            {
+                return;
+            }
 
             //4.1 El comboBox va a usar la propiedad de Nombre dentro de la mascota
             comboBox1.DisplayMember = "Nombre";
@@ -77,46 +84,71 @@ namespace VeterinariaS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Mascota mascota = (Mascota)comboBox1.SelectedItem;
-            Usuario Veterinario = (Usuario)comboBox2.SelectedItem;
-            string DiasHospitalString = textBox2.Text;
-            string NumeroCama = textBox3.Text;
-            DateTime fecha = dateTimePicker1.Value;
-            float CostoInsumos;
-            float Costo = 0;
-
-            //conversion de string a int
-            //int DiasHospital = int.TryParse(DiasHospitalString, out DiasHospital) ? DiasHospital : 0;
-
-            // Intentar convertir el texto a un valor int
-            if (int.TryParse(DiasHospitalString, out int DiasHospital)){  }
-            else
+            Dictionary<string, object> datosValidos = ValidarDatos();
+            if (datosValidos == null)
             {
-                MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero");
+                MessageBox.Show("No ingreso ningun dato");
+                //Limpiar los controladores
+                comboBox1 = null;
+                dateTimePicker1 = null;
+                comboBox2 = null;
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                return;
             }
 
+            Mascota mascota = (Mascota)datosValidos["Mascota"];
+            DateTime fechaConsulta = dateTimePicker1.Value;
+            Usuario veterinario = (Usuario)datosValidos["Veterinario"];
+            float diasHospital;
+            string numeroCama = (string)datosValidos["NumCama"];
+            float costoInsumos;
+            float costo = 0;
 
-            if (float.TryParse(textBox4.Text, out CostoInsumos))
+            //conversion de cadena a float
+            if (float.TryParse((string)datosValidos["Dias"], out diasHospital))
             {
-                Costo = CostoInsumos + 300;
+                costo = diasHospital * 600;
+            }
+            else { MessageBox.Show("El valor que esta ingresando en dias en el hospital no es un numero, por favor ingrese un numero"); }
+
+            
+
+
+            // Intentar convertir el texto a un valor int
+            if (float.TryParse((string)datosValidos["CostoInsumo"], out costoInsumos))
+            {
+                costo = costoInsumos + costo;
             }
             else { MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero"); }
 
             //creo la nueva hospitalizacion con mis datos 
             Hospitalizacion nuevaHospitalizacion = new Hospitalizacion
-                (mascota, 
-                Veterinario, 
-                Costo, 
-                CostoInsumos, 
-                fecha, 
-                DiasHospital, 
-                NumeroCama);
+                (
+                mascota,
+                veterinario,
+                costo,
+                costoInsumos,
+                fechaConsulta,
+                diasHospital,
+                numeroCama);
+                
 
             instanciaVeterinariaC.registroHospitalizacion(nuevaHospitalizacion);
             
 
             MessageBox.Show("Hospitalización registrada con exito");
-            this.Hide();
+            
+            //Limpiar los controladores
+            comboBox1 = null;
+            dateTimePicker1 = null;
+            comboBox2 = null;
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -126,6 +158,50 @@ namespace VeterinariaS
             if (float.TryParse(textBox2.Text, out costoInsumos)) { } else { }
             float costoTotal = costoInsumos + 600;
             label8.Text =  "$ " + costoTotal.ToString();
+        }
+
+        //metodo para validar datos 
+        private Dictionary<string, object> ValidarDatos()
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                return null;
+            }
+
+            if (comboBox2.SelectedItem == null)
+            {
+                return null;
+            }
+
+            if (textBox2.Text == null || textBox2.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (textBox3.Text == null || textBox3.Text.Trim() == "")
+            {
+                return null;
+            }
+
+            if (textBox4.Text == null || textBox4.Text.Trim() == "")
+            {
+                return null;
+            }
+
+
+
+            //4. retorno los datos validados en un diccionario/tipo lista
+            Dictionary<string, object> datosValidos = new Dictionary<string, object>();
+            //datosValidos.Add("Dueno", (Dueno)comboBox1.SelectedItem);
+
+            datosValidos.Add("Mascota", (Mascota)comboBox1.SelectedItem);
+            datosValidos.Add("Veterinario", (Usuario)comboBox2.SelectedItem);
+            datosValidos.Add("Dias", textBox2.Text);
+            datosValidos.Add("NumCama", textBox3.Text);
+            datosValidos.Add("CostoInsumo", textBox4.Text);
+
+            return datosValidos;
+
         }
     }
 }

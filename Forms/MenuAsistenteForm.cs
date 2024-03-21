@@ -32,7 +32,8 @@ namespace VeterinariaS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ConsultasForm instancia = new ConsultasForm();
+            //ConsultasForm instancia = new ConsultasForm();
+            AltaConsultaForm instancia = new AltaConsultaForm();
             instancia.Show();
             
         }
@@ -46,7 +47,8 @@ namespace VeterinariaS
 
         private void button5_Click(object sender, EventArgs e)
         {
-            HospitalizacionForm instancia = new HospitalizacionForm();
+            //HospitalizacionForm instancia = new HospitalizacionForm();
+            AltaHospitalizacionForm instancia = new AltaHospitalizacionForm();
             instancia.Show();
         }
 

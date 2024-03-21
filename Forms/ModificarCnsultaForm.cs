@@ -80,9 +80,9 @@ namespace VeterinariaS.Forms
             string tratamiento = (string)datosValidos["Tratamiento"];
             float costoInsumos = (float)datosValidos["CostoInsumos"];
             //creo la nueva hospitalizacion con mis datos 
-            Consulta nuevaConsulta = new Consulta(Diagnostico,Tratamiento,Hospitalizacion);
+            //Consulta nuevaConsulta = new Consulta(Diagnostico,Tratamiento,Hospitalizacion);
 
-            instanciaVeterinariaC.registroConsulta(nuevaConsulta);
+            //instanciaVeterinariaC.registroConsulta(nuevaConsulta);
 
             // Mostrar el mensaje de consulta registrada
             MessageBox.Show("Consulta registrada correctamente");
