@@ -11,9 +11,9 @@ namespace Veterinaria.Clases
     public class Consulta : Servicio
     {
         //atributos 
-        string Diagnostico { get; set; }
-        string Tratamiento { get; set; }
-        bool Hospitalizacion { get; set; }
+         public string Diagnostico { get; set; }
+         public string Tratamiento { get; set; }
+         public bool Hospitalizacion { get; set; }
         //metodo constructor sin parametros
         public Consulta() { }
         //metodo constructor

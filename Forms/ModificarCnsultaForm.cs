@@ -9,119 +9,121 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Veterinaria.Clases;
 
 namespace VeterinariaS.Forms
 {
     public partial class ModificarCnsultaForm : Form
     {
+        //Definicion de instanciaVeterinariaC
+        static VeterinariaC instanciaVeterinariaC;
         public ModificarCnsultaForm()
         {
             InitializeComponent();
+            //Llamar al metodo obtenerVeterinaria
+            instanciaVeterinariaC = VeterinariaC.obtenerVeterinaria();
+
+            // Cargar las consultas en el comboBox
+            CargarConsultas();
+
         }
+        private void CargarConsultas()
+        {
+            Consulta[] listaConsultas = instanciaVeterinariaC.obtenerConsultas();
+
+            // Validar que la lista de consultas no sea nula
+            if (listaConsultas == null)
+            {
+                return;
+            }
+
+            // Asignar la propiedad DisplayMember y cargar las consultas en el comboBox
+            comboBox3.DisplayMember = "Mascota";
+            foreach (Consulta consulta in listaConsultas)
+            {
+                comboBox3.Items.Add(consulta);
+            }
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+            // Validar los datos ingresados por el usuario
+            Dictionary<string, object> datosValidos = ValidarDatos();
+            if (datosValidos == null)
+            {
+                MessageBox.Show("Por favor ingrese todos los datos correctamente");
+                LimpiarCampos();
+                return;
+            }
+
+            float costoInsumos = (float)datosValidos["CostoInsumos"];
+            // Calcular el costo total
+            float costoTotal = costoInsumos + 300;
+            label9.Text = "$ " + costoTotal.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //1. Validar datos 
-            //1.1 Metodo validar datos 
+            // Validar los datos ingresados por el usuario
             Dictionary<string, object> datosValidos = ValidarDatos();
             if (datosValidos == null)
             {
-                MessageBox.Show("Ingreso de datos incorrectos");
-
-                textBox2.Text = "";
-                comboBox3.SelectedItem = null;
-                richTextBox2.text = "";
+                MessageBox.Show("Por favor ingrese todos los datos correctamente");
+                LimpiarCampos();
                 return;
             }
+            // Obtener los datos validados
+            Consulta consulta = (Consulta)datosValidos["Consulta"];
+            string diagnostico = (string)datosValidos["Diagnostico"];
+            string tratamiento = (string)datosValidos["Tratamiento"];
+            float costoInsumos = (float)datosValidos["CostoInsumos"];
+            //creo la nueva hospitalizacion con mis datos 
+            Consulta nuevaConsulta = new Consulta(Diagnostico,Tratamiento,Hospitalizacion);
 
-            //2. Obtener datos 
-            //2.1 debe de mostrar solo las consultas del veterinario que se selecciono     
+            instanciaVeterinariaC.registroConsulta(nuevaConsulta);
 
-            //3. implementar la parte de que se seleccione la consulta que se va a modificar 
-            //3.1 se guarde los datos 
-
-            //4. Aparezca el mensaje de consulta registrada 
-
-
-            float costoInsumos;
-            float costo = 0;
-
-             if (float.TryParse(textBox2.Text, out costoInsumos)) 
-        {
-            costo = costoInsumos + 300;
-             } else{ MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero");  }
-
-
-            string diagnostico = richTextBox1.Text;
-            string tratamiento = richTextBox2.Text;
-            bool hospitalizacion;
-
-            if (radioButton1.Checked)
-            {
-            hospitalizacion = true;
-            }
-            else
-            {
-           hospitalizacion = false;
-            }
-
-            //Si el radioButton 1 esta selelccionado entonces voy a abrir el formulario de hospitalizacion 
-                if (radioButton1.Checked == true)
-                {
-                    AltaHospitalizacionForm instancia = new AltaHospitalizacionForm();
-            instancia.Show();
-
-                }
-            //Si el radioButton 1 no esta seleccionado o el radioButton 2 esta seleccionado entonces no hace nada*/
-
-                if (float.TryParse(textBox2.Text, out costoInsumos))
-                {
-                    costo = costoInsumos + 300;
-                    label9.Text = "$ " + costo.ToString();
-                }
-                else { MessageBox.Show("El valor que esta ingresando en costo insumos no es un numero, por favor ingrese un numero"); }
-            
-
+            // Mostrar el mensaje de consulta registrada
+            MessageBox.Show("Consulta registrada correctamente");
 
         }
 
         private Dictionary<string, object> ValidarDatos()
         {
-            if (comboBox3.SelectedItem == null)
+            if (comboBox3.SelectedItem == null ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(richTextBox1.Text) ||
+                string.IsNullOrWhiteSpace(richTextBox2.Text))
             {
                 return null;
             }
 
-            if (textBox2.Text == null || textBox2.Text.Trim() == "")
+            // Validar que el costo de insumos sea un número
+            if (!float.TryParse(textBox2.Text, out float costoInsumos))
             {
+                MessageBox.Show("El costo de insumos debe ser un número.");
                 return null;
             }
 
-            if (richTextBox1.Text == null || richTextBox1.Text.Trim() == "")
-            {
-                return null;
-            }
-            if (richTextBox2.Text == null || richTextBox2.Text.Trim() == "")
-            {
-                return null;
-            }
-
-            //retorno un diccionario con los datos 
+            // Retornar un diccionario con los datos validados
             Dictionary<string, object> datosValidos = new Dictionary<string, object>();
-
-            //agrego datos al diccionario
-            datosValidos.Add("Consulta", comboBox3.SelectedItem.ToString());
-            datosValidos.Add("Disgnostico", richTextBox1.Text);
+            datosValidos.Add("Consulta", comboBox3.SelectedItem);
+            datosValidos.Add("Diagnostico", richTextBox1.Text);
             datosValidos.Add("Tratamiento", richTextBox2.Text);
-            datosValidos.Add("Costo Insumo", textBox2.Text);
+            datosValidos.Add("CostoInsumos", costoInsumos);
 
             return datosValidos;
+
         }
+        private void LimpiarCampos()
+        {
+            textBox2.Text = "";
+            comboBox3.SelectedItem = null;
+            richTextBox1.Text = "";
+            richTextBox2.Text = "";
+        }
+
 
     }
 

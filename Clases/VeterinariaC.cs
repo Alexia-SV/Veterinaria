@@ -170,8 +170,21 @@ namespace Veterinaria.Clases
             this.guardarAtributosVeterinaria();
         }
 
-        
 
+        public void registroConsulta(Consulta consulta)
+        {
+            if (this.consultas == null)
+            {
+                this.consultas = new Consulta[0];
+            }
+            Consulta[] nuevaConsulta = new Consulta[1] { consulta };
+
+            Consulta[] combiArregloConsulta = this.consultas.Concat(nuevaConsulta).ToArray();
+
+            consultas = combiArregloConsulta;
+
+            this.guardarAtributosVeterinaria();
+        }
         public void agregarMascota(Mascota mascota)
         {
             if (this.mascotas == null)
