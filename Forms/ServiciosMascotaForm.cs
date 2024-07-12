@@ -77,5 +77,10 @@ namespace VeterinariaS.Forms
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.Refresh();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

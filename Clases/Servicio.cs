@@ -20,7 +20,13 @@ namespace Veterinaria.Clases
         //metodo constructor sin parametros
         public Servicio() { }
         //metodo constructor parametros 
-        public Servicio(float elCosto, float elCostoInsumo, Usuario elVeterinario, Mascota laMascota, DateTime laFecha, string elServicio)
+        public Servicio(
+            float elCosto, 
+            float elCostoInsumo, 
+            Usuario elVeterinario, 
+            Mascota laMascota, 
+            DateTime laFecha, 
+            string elServicio)
         {
             Costo = elCosto;
             CostoInsumo = elCostoInsumo;
@@ -28,9 +34,7 @@ namespace Veterinaria.Clases
             Mascota = laMascota;
             Fecha = laFecha;
             TipoServicio = elServicio;
-        }
-
-         
+        }        
         
     }
 }
